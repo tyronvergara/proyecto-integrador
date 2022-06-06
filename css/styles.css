@@ -1,0 +1,39 @@
+#Busqueda {
+   
+    padding: 10 10px 10 25px;
+        position: center;
+        margin: 0 auto;
+        padding-top: 6px;
+        height: 30px;
+        align-content: center;
+        align-items: center;
+   };
+ 
+.navbarsExample05{
+    background-color: black;
+};
+
+/* FOOTER */
+.container{
+    opacity: 1;
+    background-color: black;
+};
+
+.row{
+    background-color: black;
+};
+
+.containerFooter{
+    background-color: black;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+};
+.columnaNosotros{
+    padding-left: auto;
+}
+
+
