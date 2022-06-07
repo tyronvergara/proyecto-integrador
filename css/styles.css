@@ -54,7 +54,40 @@ header{
 } */
 
 
-/*---------------------------------*/
+/* ---------------------------------*/
+
+/* header{
+    background: yellow;
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    line-height: 100px;
+    color: aliceblue;
+    /*border-bottom:3px dashed black;*/
+/* Se ajusta al contenedor del 100% de altura y anchura del encabezado de la página,color,ancho,altura, el color*/
+/* 
+nav ul li{
+    float:left;    
+    list-style: none;    
+    margin-top: 15px;    
+    margin-bottom: 15px;
+    line-height: 15px;
+    margin-left: 220px;  
+    margin-right: -100px;  
+} /* Se le aplican propiedades de la lista a los elementos de navegación*/
+
+ /* .limpiar{
+    clear:both; 
+} /* se elimina espacio en la fila*/
+/* nav{
+    background: lightskyblue;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid black;    
+    border-bottom: 1px solid black;   
+     */
+
 .form-inline {
    
     padding: 10 10px 10 25px;
@@ -115,7 +148,7 @@ footer{
 }
 
 .pie-pagina .grupo-2{
-    background-color: gray;
+    background-color: darkgrey;
     padding: 10px 10px;
     text-align: center;
     color: #fff;
