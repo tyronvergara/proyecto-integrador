@@ -1,0 +1,205 @@
+/* Header
+#busqueda{
+  
+    margin:auto;
+     display:flex;
+     
+}
+#menu{
+    margin:auto;
+    display:flex;
+}
+
+header{
+    display: flex;
+    height: 200px;
+    background-color: black ;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.nav-link {
+    color: black;
+    display: inline;
+    background-color: white;
+    justify-content: center;
+    align-items:center;
+    margin-right: 100px;
+    border-style:outset;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px;
+}
+
+.car{
+    height: 30px;
+    background-color: white;
+    justify-content: space-between;
+    align-items:center;
+    margin-right: 100px;
+    border-radius: 20px;
+    
+
+
+}
+
+.heart{
+    height: 30px;
+    background-color: white;
+    justify-content: space-between;
+    align-items:center;
+    margin-right: 50px;
+    border-radius: 20px;
+
+} */
+
+
+/* ---------------------------------*/
+
+/* header{
+    background: yellow;
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    line-height: 100px;
+    color: aliceblue;
+    /*border-bottom:3px dashed black;*/
+/* Se ajusta al contenedor del 100% de altura y anchura del encabezado de la página,color,ancho,altura, el color*/
+/* 
+nav ul li{
+    float:left;    
+    list-style: none;    
+    margin-top: 15px;    
+    margin-bottom: 15px;
+    line-height: 15px;
+    margin-left: 220px;  
+    margin-right: -100px;  
+} /* Se le aplican propiedades de la lista a los elementos de navegación*/
+
+ /* .limpiar{
+    clear:both; 
+} /* se elimina espacio en la fila*/
+/* nav{
+    background: lightskyblue;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid black;    
+    border-bottom: 1px solid black;   
+     */
+
+.form-inline {
+   
+    padding: 10 10px 10 25px;
+        position: center;
+        margin: 0 auto;
+        padding-top: 6px;
+        height: 30px;
+        align-content: center;
+        align-items: center;
+   };
+ 
+.navbarsExample05{
+    background-color: black;
+};
+
+/* FOOTER */
+footer{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
+    background-color: black;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .footercolumna .footerTitulo{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+.pie-pagina .grupo-1 .footercolumna p{
+    color: #efefef;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.pie-pagina .grupo-1 .footercolumna .footerEnlaces{
+    color: #efefef;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.pie-pagina .grupo-1 .red-social{
+    display: inline-block center;
+    text-decoration: none;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.pie-pagina .grupo-2{
+    background-color: darkgrey;
+    padding: 10px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+.bi-facebook{
+    width: 45px;
+    height: 45px;
+    fill: #3b5998;
+}
+.bi-instagram{
+    width: 45px;
+    height: 45px;
+    fill: crimson;
+}
+.bi-twitter{
+    width: 45px;
+    height: 45px;
+    fill: #00acee;
+}
+
+.bi-facebook:hover {
+    fill: white;
+    color:white;
+}
+.bi-instagram:hover {
+    fill: white;
+    color:white;
+}
+.bi-twitter:hover {
+    fill: white;
+    color:white;
+}
+.bi-suit-heart-fill{
+    width: 15px;
+    height: 15px;
+    fill: red;
+    display: inline-block;
+  }
+
+
+.img-circulo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+}
+
+.img-circulo:hover {
+    opacity: 85%;
+}
+
