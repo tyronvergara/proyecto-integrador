@@ -36,106 +36,86 @@
           font-size: 3.5rem;
         }
       }
-    </style> -->
+    </style>
 
     
-    <!-- Custom styles for this template -->
+    <!--Custom styles for this template -->
     <link href="./css/styles.css" rel="stylesheet">
   </head>
   <body>
     <header>
-
-
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
-        <div id="logo">
-          <a href="./index.html">
-          <img src="./img/logo.png" width="150px" ></a>
-      </div>
-    
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Caballeros</a>
+      <div id="head">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <img  id="logo" src="./img/logo.png" style="width: 130px;">
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgb(196, 39, 18); color:white;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse"  id="navbarCollapse">
+            <div id="buscar"style="margin-left:100px;">
+                     <form class="form-inline" >
+            <input class="form-control mr-sm-2" style="width:300px; " type="text" placeholder="Buscar"aria-label="Search">
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" style="background-color: rgb(196, 39, 18); color: whitesmoke; border-color: rgb(196, 39, 18)" type="submit">Buscar</button>
+          </form></div>
+  
+          <div class="menu"  id="navbarCollapse">
+            <ul class="nav" id="menu"  style="position:right; margin-left: 50px;">
+              <li>
+                <a class="nav-link" href="#" style="color:white;"><div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle bg-dark" style="border:none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorias 
+                   
+                  <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton" >
+                    <a class="dropdown-item" style="color:white" href="#">Caballeros</a>
+                    <a class="dropdown-item" style="color:white" href="#">Damas</a>
+                    <a class="dropdown-item" style="color:white" href="#">Niños</a>
+                    <a class="dropdown-item" style="color:white" href="#">Bebes</a>
+                  </button>
+                
+                  </div>
+                </div></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color:white">Nosotros</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color:white">Contactanos</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="#" style="color:white"></a>
+              </li>
+            </li>
+          
+            <li class="nav-item">
+              <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20" fill="white" class="bi bi-heart" viewBox="0 0 16 16" style="margin: 5px; position:center  ">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+              </svg>
+              </svg>
+           </li>
+           <li>
+             </li></br> </li>
+           <li class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-cart3" viewBox="0 0 16 16"  style="margin: 5px; position:center  ">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Damas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Niños</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bebes</a>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16"  style="margin: 5px; position:center  ">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
           </li>
             </ul>
-      
+            
+          </div>
+        </nav>
       </div>
-    </nav>
-    
     </header>
-<!-- <header>
-  <section>
-  <div id="logo">
-    <a href="./index.html">
-    <img src="./img/logo.png" width="150px" ></a>
-  </div>
-  <div id="busqueda">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form></div>
-  </br>
-  <div id="menu">
-  <nav>
-    <a href="" class="nav-link">Caballeros</a>
-    <a href="" class="nav-link">Damas</a>
-    <a href="" class="nav-link">Niños</a>
-    <a href="" class="nav-link">Bebes</a>
-  
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="heart" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
-  </svg>
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="car" viewBox="0 0 16 16">
-    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-  </svg>
-</nav></div></section>
-</header> -->
-  
-
-  <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-
-    <div id="logo">
-      <a href="./index.html">
-      <img src="./img/logo.png" width="150px" ></a>
-  </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExample05">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Caballeros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Damas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Niños</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Bebes</a>
-      </li>
-    
-    </ul>
-    <form class="form-inline my-2 my-md-0">
-      <input class="form-control"type="text" placeholder="Buscar" id="Busqueda">
-    </form>
-  </div>
-</nav> -->
-
-</header>
+    <br>
+    <br>
+    <br>
+    <br>
 
 <main role="main">
 
