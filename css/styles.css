@@ -107,8 +107,6 @@ nav ul li{
 .contactanos{
     text-align: center;
 }
-
-
 /* .form-control {
 
 } */
@@ -138,23 +136,33 @@ footer{
     padding: 45px 0px;
 }
 
+
 .pie-pagina .grupo-1 .footercolumna .footerTitulo{
     color: #fff;
     margin-bottom: 25px;
     font-size: 20px;
     text-align: center;
 }
+.pie-pagina .grupo-1 .footercolumna .enlacesInteres{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
 .pie-pagina .grupo-1 .footercolumna p{
     color: #efefef;
     margin-bottom: 10px;
     text-align: justify;
 }
+
 .pie-pagina .grupo-1 .footercolumna .footerEnlaces{
     color: #efefef;
     margin-bottom: 10px;
     text-align: center;
+    /* margin-left: 100px; */
 }
-.pie-pagina .grupo-1 .red-social{
+    .pie-pagina .grupo-1 .red-social{
     display: inline-block center;
     text-decoration: none;
     margin-right: 10px;
@@ -172,18 +180,15 @@ footer{
 }
 
 .bi-facebook{
-    width: 45px;
-    height: 45px;
+    font-size: 40px;
     fill: #3b5998;
 }
 .bi-instagram{
-    width: 45px;
-    height: 45px;
-    fill: crimson;
+    font-size: 40px;
+    color: crimson;
 }
 .bi-twitter{
-    width: 45px;
-    height: 45px;
+    font-size: 40px;
     fill: #00acee;
 }
 
@@ -202,7 +207,7 @@ footer{
 .bi-suit-heart-fill{
     width: 15px;
     height: 15px;
-    fill: red;
+    color: red;
     display: inline-block;
   }
 
@@ -215,4 +220,20 @@ footer{
 
 .img-circulo:hover {
     opacity: 85%;
+}
+.form-group{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+.form-control{
+    margin: auto;
+}
+.btnEnviar{
+    margin: 0;
+    position: absolute;
+    left: 48%;
+    font-size: 25px;
+    border-color: rgb(196, 39, 18);
+    color: whitesmoke;
 }
