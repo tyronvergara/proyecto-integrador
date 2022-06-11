@@ -107,6 +107,7 @@ botonEnviar.addEventListener("click", (event) => {
 
             listaAlerta.innerHTML = listaErrores;
 
+            window.scrollTo(0, 0);
     } else {
 
       textoAlerta.innerHTML = "¡Su mensaje ha sido enviado correctamente!"
