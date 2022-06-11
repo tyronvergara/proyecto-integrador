@@ -1,4 +1,7 @@
 let botonEnviar = document.getElementById("botonEnviar");
+let cajaAlerta = document.getElementById("alerta-caja");
+let listaAlerta = document.getElementById("alerta-lista");
+let textoAlerta = document.getElementById("alerta-texto");
 
 let datosEmail = {
     Host : "smtp.elasticemail.com",
@@ -11,7 +14,7 @@ let datosEmail = {
 } 
 
 function validarNombre(nombre){
-    if (nombre.length < 1) {
+    if (nombre.length < 2 || nombre > 100) {
       return false;
     }
     return true;
@@ -29,21 +32,21 @@ function validarNombre(nombre){
   } //validarEmail
 
   function validarTelefono(telefono){
-    if (isNaN(telefono.value)) {
+    if (isNaN(telefono) || telefono.length < 10 || telefono.length > 20) {
       return false;
     }
     return true;
   } //validarTelefono
   
   function validarMensaje(mensaje){
-    if (mensaje.length <= 0 || mensaje.length > 1000 ) {
+    if (mensaje.length <= 5 || mensaje.length > 1000 ) {
       return false;
     }
     return true;
   }//validarMensaje
 
   function validarAsunto(asunto) {
-    if (asunto.length <= 0 || asunto.length > 1000) {
+    if (asunto.length <= 5 || asunto.length > 1000) {
       return false;
     }
     return true;
@@ -65,7 +68,7 @@ botonEnviar.addEventListener("click", (event) => {
 
     // Definir "asunto" y "cuerpo" del mensaje
 
-    datosEmail.Subject = asuntoFormulario;
+    datosEmail.Subject = "Formulario de contacto OutShoes - " + asuntoFormulario;
     
     datosEmail.Body = "Nombre del cliente: " + nombreFormulario + "<br>" +
                       "Teléfono del cliente: "  + telefonoFormulario  +"<br>" +
@@ -73,29 +76,48 @@ botonEnviar.addEventListener("click", (event) => {
 
     // Validaciones...
 
-    if ( ! validarNombre(nombreFormulario) ) {
+    if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario) && 
+          validarTelefono(telefonoFormulario) && validarAsunto(asuntoFormulario) && 
+          validarMensaje(mensajeFormulario) ) ) {
       
-    }
+            cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
+            cajaAlerta.style.display="block";
 
-    if (! validarEmail(correoFormulario) ) {
-      
-    }
+            if ( ! validarNombre(nombreFormulario) ) {
+              listaErrores += "<li>Ingresa un nombre válido (entre 2 y 100 caracteres)</li>";
+            }
 
-    if (! validarTelefono(telefonoFormulario) ) {
-      
-    }
+            if ( ! validarEmail(correoFormulario) ) {
+              listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
+            }
 
-    if (! validarAsunto(asuntoFormulario) ) {
-      
-    }
+            if ( ! validarTelefono(telefonoFormulario) ) {
+              listaErrores += "<li>Ingresa un telefono válido (número de teléfono a 10 digitos)</li>";
+            }
 
-    if ( ! validarMensaje(mensajeFormulario) ) {
-      
-    }
+            if ( ! validarAsunto(asuntoFormulario) ) {
+              listaErrores += "<li>Ingresa un asunto válido (minimo 5 caracteres y maximo 1000) </li>";
+            }
 
-    Email.send(datosEmail).then(
-        // CAMBIAR - (Alerta solo para pruebas)
-        message => alert("Email enviado :)")
+            if ( ! validarMensaje(mensajeFormulario) ) {
+              listaErrores += "<li>Ingresa un mensaje válido (minimo 5 caracteres y maximo 1000) </li>";
+            }
+
+            textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
+
+            listaAlerta.innerHTML = listaErrores;
+
+    } else {
+
+      textoAlerta.innerHTML = "¡Su mensaje ha sido enviado correctamente!"
+      listaAlerta.innerHTML = "";
+      cajaAlerta.className = "alert alert-success alert-dismissible fade show"
+
+
+      Email.send(datosEmail).then(
+        message =>  cajaAlerta.style.display="block"
+
+    );
 
     // Regresando el formulario a datos en blanco
       document.getElementById("correoElectronico").value = "";
@@ -103,7 +125,12 @@ botonEnviar.addEventListener("click", (event) => {
       document.getElementById("nombre").value = "";
       document.getElementById("telefono").value = "";
       document.getElementById("asunto").value = "";
+      
+      botonEnviar.disabled = true;
 
+      window.scrollTo(0, 0);
     }
     
-})
+  }
+
+)
