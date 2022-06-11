@@ -150,6 +150,90 @@ nav ul li{
     fill: rgb(196, 39, 18);
     color:rgb(196, 39, 18);
 }
+
+/* Página Login*/
+
+.contenedorInicioSesion{
+    width: 100%;
+    padding: 15px;
+}
+.iniciarSesion{
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+h1{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
+
+.form-control-email{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.form-control-password{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.inputPassword{
+    margin-left: 10px;
+}
+.inputContenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+.bi-envelope-fill{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 15px;
+    color: #999;
+}
+.bi-key-fill{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 15px;
+    color: #999;
+}
+.botonIniciarSesion{
+    border: none;
+    width: 94%;
+    margin-left: 15px;
+    color: white;
+    font-size: 20px;
+    background: #808080;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.botonIniciarSesion:hover{
+    background: #0000FF;
+}
+p{
+    text-align: center;
+}
+.registrate{
+    text-decoration: none;
+      color: #1a2537;
+    font-weight: 600;
+}
+.registrate:hover{
+     color: #0000FF;
+}
+.iniciarSesion{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+
+
+
+
 /* FOOTER */
 footer{
     margin: 0;
@@ -170,7 +254,6 @@ footer{
     grid-gap:50px;
     padding: 45px 0px;
 }
-
 
 .pie-pagina .grupo-1 .footercolumna .footerTitulo{
     color: #fff;
@@ -217,14 +300,17 @@ footer{
 .bi-facebook{
     font-size: 40px;
     fill: #3b5998;
+    color: #3b5998 ;
 }
 .bi-instagram{
     font-size: 40px;
+    fill: crimson;
     color: crimson;
 }
 .bi-twitter{
     font-size: 40px;
     fill: #00acee;
+    color: #00acee;
 }
 
 .bi-facebook:hover {
