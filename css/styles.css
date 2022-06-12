@@ -180,8 +180,15 @@ h1{
     padding: 10px;
     border: none;
 }
-.inputPassword{
+.inputPasswordInicioSesion{
     margin-left: 10px;
+}
+.forgotPassword{
+    color: gray;
+    margin-left: 260px;
+}
+.forgotPassword:hover{
+    color: #0000FF;
 }
 .inputContenedor{
     margin-bottom: 15px;
@@ -231,6 +238,106 @@ p{
         border-radius: 2%;
     }
 
+    /* Pagina Registrate*/
+    .contenedorRegistrate{
+        width: 100%;
+        padding: 15px;
+    }
+    .registrarse{
+        background: #fff;
+        margin-top: 150px;
+        padding: 3px;
+    }
+    h1{
+        text-align: center;
+        color: black;
+        font-size: 40px;
+    }
+    
+    .form-control-nombresRegistro{
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .form-control-ApellidosRegistro{
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .form-control-emailRegistro{
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .form-control-passwordRegistro {
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .inputPasswordRegistro{
+        margin-left: 10px;
+    }
+    .inputContenedorRegistrate{
+        margin-bottom: 15px;
+        border: 1px solid #aaa;
+    }
+    .bi-person-fill{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 15px;
+        color: #999;
+    }
+    .bi-envelope-fill{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 15px;
+        color: #999;
+    }
+    .bi-key-fill{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 15px;
+        color: #999;
+    }
+    .botonRegistrarte{
+        border: none;
+        width: 94%;
+        margin-left: 15px;
+        color: white;
+        font-size: 20px;
+        background: #808080;
+        padding: 15px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .botonRegistrarte:hover{
+        background: #0000FF;
+    }
+    p{
+        text-align: center;
+    }
+    .registrarse{
+        text-decoration: none;
+          color: #1a2537;
+        font-weight: 600;
+    }
+    .registrarse:hover{
+         color: #0000FF;
+    }
+    .registrarse{
+            margin: auto;
+            width: 500px;
+            margin-top: 150px;
+            border-radius: 2%;
+        }
+    .registroPolitica{
+            color: black
+        }
+    
 
 
 
