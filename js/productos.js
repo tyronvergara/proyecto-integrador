@@ -22,48 +22,49 @@ out003 = {"Sku":"Out0033","Nombre del Producto":"Sandalias Nike para Hombre CN96
         "Tallas":"25-30",
         "Existencias":"30",
         "Tipo de Producto":"Sandalias",
-        "Catagoria":"Caballeros"}
-    let out004= {"Sku":"outoo4","Nombre del Producto":"Bota Paulina para Mujer Cafe",
-        "Precio":"659.00",
-        "Tallas":"22 - 26",
-        "Existencias":"25",
-        "Tipo de Producto":"Bota",
-        "Catagoria":"Damas","img":"./img/productos/Damas/out004/4.webp"}
+        "Categoria":"Caballeros"}
 
-        let out005= {"Sku":"outoo5","Nombre del Producto":"Tenis Adidas para Mujer GY0700 Negro",
-        "Precio":"1299.00",
-        "Tallas":"22 - 26",
-        "Existencias":"21",
-        "Tipo de Producto":"Tenis",
-        "Catagoria":"Damas","img":"./img/productos/Damas/out005/5.webp"}
+    let out004= {"sku":"out004","producto":"Bota Paulina para Mujer Cafe",
+        "precio":"659.00",
+        "tallas":[22,23,24,25,26],
+        "existencias":"25",
+        "tipo":"Bota",
+        "categoria":"Damas","img":"./img/productos/Damas/out004/4.webp"}
+
+        let out005= {"sku":"out005","producto":"Tenis Adidas para Mujer GY0700 Negro",
+        "precio":"1299.00",
+        "tallas":[22,23,24,25,26],
+        "existencias":"21",
+        "tipo":"Tenis",
+        "categoria":"Damas","img":"./img/productos/Damas/out005/5.webp"}
         
-        let out006= {"Sku":"outoo5","Nombre del Producto":"Zapatillas Paulina para Mujer 14215 Cafe",
-        "Precio":"469.00",
-        "Tallas":"22 - 26",
-        "Existencias":"12",
-        "Tipo de Producto":"Zapatillas",
-        "Catagoria":"Damas","img":"./img/productos/Damas/out006/6.webp"}
+        let out006= {"sku":"out005","producto":"Zapatillas Paulina para Mujer 14215 Cafe",
+        "precio":"469.00",
+        "tallas":[22,23,24,25,26],
+        "existencias":"12",
+        "tipo":"Zapatillas",
+        "categoria":"Damas","img":"./img/productos/Damas/out006/6.webp"}
 
-        let out007= {"Sku":"outoo7","Nombre del Producto":"Tenis Adidas para Niña GZ3318 Blanco",
-        "Precio":"999.00",
-        "Tallas":"16 - 21",
-        "Existencias":"13",
-        "Tipo de Producto":"Tenis niñas",
-        "Catagoria":"Niños","img":"./img/productos/Nino/out007/7.webp"}
+        let out007= {"sku":"out007","producto":"Tenis Adidas para Niña GZ3318 Blanco",
+        "precio":"999.00",
+        "tallas":[16,17,18,19,20,21,22],
+        "existencias":"13",
+        "tipo":"Tenis niñas",
+        "categoria":"Niños","img":"./img/productos/Nino/out007/7.webp"}
 
-        let out008= {"Sku":"outoo8","Nombre del Producto":"Zapato Casual Jakuna para Niña 21854 Rojo [JAK155]",
-        "Precio":"299.00",
-        "Tallas":"16 - 21",
-        "Existencias":"6",
-        "Tipo de Producto":"Zapato",
-        "Catagoria":"Niños","img":"./img/productos/Nino/out008/8.webp"}
+        let out008= {"sku":"out008","producto":"Zapato Casual Jakuna para Niña 21854 Rojo [JAK155]",
+        "precio":"299.00",
+        "tallas":[16,17,18,19,20,21,22],
+        "existencias":"6",
+        "tipo":"Zapato",
+        "categoria":"Niños","img":"./img/productos/Nino/out008/8.webp"}
 
-        let out009= {"Sku":"outoo9","Nombre del Producto":"Tenis Marvel para Niño 73731 Rojo ",
-        "Precio":"499.00",
-        "Tallas":"16 - 21",
-        "Existencias":"14",
-        "Tipo de Producto":"Zapato",
-        "Catagoria":"Niños","img":"./img/productos/Nino/out009/9.webp"}
+        let out009= {"sku":"out009","producto":"Tenis Marvel para Niño 73731 Rojo ",
+        "precio":"499.00",
+        "tallas":[16,17,18,19,20,21,22],
+        "existencias":"14",
+        "tipo":"Zapato",
+        "categoria":"Niños","img":"./img/productos/Nino/out009/9.webp"}
 
         out10 = {"Sku":"out0010","Nombre del Producto":"Sandalias Minipapos para Niño 785 Negro",
         "img":"https://cdn.shopify.com/s/files/1/0031/3271/9173/products/c32d5a03-f4cd-4512-ad78-730cd77e8e1b_600x.png?v=1655361213",
