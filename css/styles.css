@@ -470,3 +470,21 @@ nav ul li{
         position: relative;
         left: 50%;
     }
+    .container2{
+        font-weight: 600;
+        font-size: 16px;
+        
+    }
+    .container{
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .container1{
+        width: 450px;
+        height: 600px;
+        border: 1px solid black;
+        padding: 50px;
+        margin: 20px;
+        text-align: left;
+      }
+    
