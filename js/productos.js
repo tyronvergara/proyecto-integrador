@@ -5,25 +5,25 @@ let out001 = {"sku":"out001",
 "precio":"1599.00",
 "tallas":[25,26,27,28,29,30],
 "existencias":"28",
-"producto":"bota",
+"producto":"Bota",
 "categoria":"caballero"}
 
 let out002 = {"sku":"out002",
 "nombre":"Tenis Adidas para Hombre FY8568 Blanco",
-"img" : "img/productos/caballeros/out002/sandalia1.png",
+"img" : "./img/productos/caballeros/out003/tenis1.png",
 "precio":"1199.00",
 "tallas":[25,26,27,28,29,30],
 "existencias":"15",
-"producto":"tenis",
+"producto":"Tenis",
 "catagoria":"caballeros"};
 
 let out003 = {"sku":"out003",
 "nombre":"Sandalias Nike para Hombre CN9675-002",
-"img": "img/prodectos/caballeros/out003/tenis1.png",
+"img": "./img/productos/caballeros/out002/sandalia1.png",
 "precio":"749.00",
 "tallas":[25,26,27,28,29,30],
 "existencias":"30",
-"producto":"sandalias",
+"producto":"Sandalias",
 "catagoria":"caballeros"}
 
  let out004= {"Sku":"out004",
@@ -49,7 +49,7 @@ let out006= {"Sku":"outoo6",
 "precio":"469.00",
 "tallas":[22,23,24,25,26],
 "existencias":"12",
-"tipo de Producto":"Zapatillas",
+"producto":"Zapatillas",
 "catagoria":"Damas",
 "img":"./img/productos/Damas/out006/6.webp"}
 
@@ -58,7 +58,7 @@ let out007= {"Sku":"outoo7",
 "precio":"999.00",
 "tallas":[16,17,18,19,20,21],
 "existencias":"13",
-"producto":"Tenis niñas",
+"producto":"Tenis",
 "catagoria":"Niños",
 "img":"./img/productos/Nino/out007/7.webp"}
 
@@ -82,17 +82,17 @@ let out009= {"Sku":"outoo9",
 
 let out010 = {"sku":"out0010",
 "nombre":"Sandalias Minipapos para Niño 785 Negro",
-"img":"img/productos/bebes/out10/sandaliasbebe1.png",
+"img":"./img/productos/bebes/out10/sandaliasbebe1.png",
 "precio":"319.00",
 "tallas":[13,14,15,16],
 "existencias":"30",
-"producto":"sandalias",
+"producto":"Sandalias",
 "categoria":"bebes"}
         
 let out011= {"sku":"out011",
 "nombre":"Tenis Minipapos para Niño 35306 Azul marino",
-"img":"img/productos/bebes/out11/bebesnino.png",
-"Precio":"1199.00",
+"img":"./img/productos/bebes/out11/bebesnino1.png",
+"precio":"1199.00",
 "tallas":[13,14,15,16],
 "existencias":"15",
 "producto":"Tenis",
@@ -100,21 +100,23 @@ let out011= {"sku":"out011",
         
 let out012= {"sku":"out013",
 "nombre":"Tenis Nike para Niña AR4137-510 Lila",
-"img":"img/productos/bebes/out12/bebesnina.png",
-"precio":"1049.00.00",
+"img":"./img/productos/bebes/out12/bebesnina1.png",
+"precio":"1049.00.00", 
 "tallas":[13,14,15,16],
 "existencias":"10",
-"producto":"tenis",
+"producto":"Tenis",
 "categoria":"bebes"}
 
 
 function agregaProducto(producto){
     const itemHTML =    `<div class="col mb-4">
-                                <div class="card">
+                                <div class="card text-center h-100">
                                         <img id="imgProducto" src="${producto.img}">
                                         <div class="card-body">
                                                 <h5 class="card-title"> ${producto.nombre} </h5>
-                                                <p  class="card-text"> ${producto.precio} </p>
+                                                <p class="text-muted">${producto.producto}</p>
+                                                <p  class="card-text"> Precio: $ ${producto.precio} </p>
+                                                <button type="button" class="btn btn-dark">Agregar al carrito</button>
                                         </div>
                                 </div>
                         </div>`
