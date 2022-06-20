@@ -1,0 +1,490 @@
+
+/* Para separar el menú del contenido de la página */ 
+body {
+    padding-top: 4rem;
+}
+
+
+/* Header
+#busqueda{
+  
+    margin:auto;
+     display:flex;
+     
+}
+#menu{
+    margin:auto;
+    display:flex;
+}
+header{
+    display: flex;
+    height: 200px;
+    background-color: black ;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-link {
+    color: black;
+    display: inline;
+    background-color: white;
+    justify-content: center;
+    align-items:center;
+    margin-right: 100px;
+    border-style:outset;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px;
+}
+.car{
+    height: 30px;
+    background-color: white;
+    justify-content: space-between;
+    align-items:center;
+    margin-right: 100px;
+    border-radius: 20px;
+    
+}
+.heart{
+    height: 30px;
+    background-color: white;
+    justify-content: space-between;
+    align-items:center;
+    margin-right: 50px;
+    border-radius: 20px;
+} */
+
+
+/* ---------------------------------*/
+
+/* header{
+    background: yellow;
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    line-height: 100px;
+    color: aliceblue;
+    /*border-bottom:3px dashed black;*/
+/* Se ajusta al contenedor del 100% de altura y anchura del encabezado de la página,color,ancho,altura, el color*/
+/* 
+nav ul li{
+    float:left;    
+    list-style: none;    
+    margin-top: 15px;    
+    margin-bottom: 15px;
+    line-height: 15px;
+    margin-left: 220px;  
+    margin-right: -100px;  
+} /* Se le aplican propiedades de la lista a los elementos de navegación*/
+
+ /* .limpiar{
+    clear:both; 
+} /* se elimina espacio en la fila*/
+/* nav{
+    background: lightskyblue;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid black;    
+    border-bottom: 1px solid black;   
+     */
+
+     .form-inline {
+   
+        padding: 10 10px 10 25px;
+            position: center;
+            margin: 0 auto;
+            padding-top: 6px;
+            height: 30px;
+            align-content: center;
+            align-items: center;
+       };
+     
+    .navbarsExample05{
+        background-color: black;
+    };
+    
+    /* body formulario de contacto */
+    .nav-link{
+        color: white;
+        text-align: center;
+    }
+    .menuNosotros{ 
+        margin-right: 50px;
+        font-size: large;
+    }
+    .menuContactanos{ 
+        margin-right: 50px;
+        font-size: large;
+    }
+    
+    .bi-heart{
+        font-size: 25px;
+        color: white;
+        margin-right: 30px;
+    }
+    .bi-cart3{
+        font-size: 25px;
+        color: white;
+        margin-right: 30px;
+    }
+    .bi-person-circle{
+        font-size: 25px;
+        color: white;
+        margin-right: 30px;
+    }
+    .bi-heart:hover {
+        fill: rgb(196, 39, 18);
+        color:rgb(196, 39, 18);
+    }
+    .bi-cart3:hover {
+        fill: rgb(196, 39, 18);
+        color:rgb(196, 39, 18);
+    }
+    .bi-person-circle:hover {
+        fill: rgb(196, 39, 18);
+        color:rgb(196, 39, 18);
+    }
+    
+    /* Página Login*/
+    
+    .contenedorInicioSesion{
+        width: 100%;
+        padding: 15px;
+    }
+    .iniciarSesion{
+        background: #fff;
+        margin-top: 150px;
+        padding: 3px;
+    }
+    h1{
+        text-align: center;
+        color: black;
+        font-size: 40px;
+    }
+    
+    .form-control-email{
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .form-control-password{
+        font-size: 20px;
+        width: 82%;
+        padding: 10px;
+        border: none;
+    }
+    .inputPasswordInicioSesion{
+        margin-left: 10px;
+    }
+    .forgotPassword{
+        color: gray;
+        margin-left: 260px;
+    }
+    .forgotPassword:hover{
+        color: #0000FF;
+    }
+    .inputContenedor{
+        margin-bottom: 15px;
+        border: 1px solid #aaa;
+    }
+    .bi-envelope-fill{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 15px;
+        color: #999;
+    }
+    .bi-key-fill{
+        font-size: 30px;
+        text-align: center;
+        margin-left: 15px;
+        color: #999;
+    }
+    .botonIniciarSesion{
+        border: none;
+        width: 94%;
+        margin-left: 15px;
+        color: white;
+        font-size: 20px;
+        background: #808080;
+        padding: 15px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .botonIniciarSesion:hover{
+        background: #0000FF;
+    }
+    p{
+        text-align: center;
+    }
+    .registrate{
+        text-decoration: none;
+          color: #1a2537;
+        font-weight: 600;
+    }
+    .registrate:hover{
+         color: #0000FF;
+    }
+    .iniciarSesion{
+            margin: auto;
+            width: 500px;
+            margin-top: 150px;
+            border-radius: 2%;
+        }
+    
+        /* Pagina Registrate*/
+        .contenedorRegistrate{
+            width: 100%;
+            padding: 15px;
+        }
+        .registrarse{
+            background: #fff;
+            margin-top: 150px;
+            padding: 3px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            font-size: 40px;
+        }
+        
+        .form-control-nombresRegistro{
+            font-size: 20px;
+            width: 82%;
+            padding: 10px;
+            border: none;
+        }
+        .form-control-ApellidosRegistro{
+            font-size: 20px;
+            width: 82%;
+            padding: 10px;
+            border: none;
+        }
+        .form-control-emailRegistro{
+            font-size: 20px;
+            width: 82%;
+            padding: 10px;
+            border: none;
+        }
+        .form-control-passwordRegistro {
+            font-size: 20px;
+            width: 82%;
+            padding: 10px;
+            border: none;
+        }
+        .inputPasswordRegistro{
+            margin-left: 10px;
+        }
+        .inputContenedorRegistrate{
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+        }
+        .bi-person-fill{
+            font-size: 30px;
+            text-align: center;
+            margin-left: 15px;
+            color: #999;
+        }
+        .bi-envelope-fill{
+            font-size: 30px;
+            text-align: center;
+            margin-left: 15px;
+            color: #999;
+        }
+        .bi-key-fill{
+            font-size: 30px;
+            text-align: center;
+            margin-left: 15px;
+            color: #999;
+        }
+        .botonRegistrarte{
+            border: none;
+            width: 94%;
+            margin-left: 15px;
+            color: white;
+            font-size: 20px;
+            background: #808080;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .botonRegistrarte:hover{
+            background: #0000FF;
+        }
+        p{
+            text-align: center;
+        }
+        .registrarse{
+            text-decoration: none;
+              color: #1a2537;
+            font-weight: 600;
+        }
+        .registrarse:hover{
+             color: #0000FF;
+        }
+        .registrarse{
+                margin: auto;
+                width: 500px;
+                margin-top: 150px;
+                border-radius: 2%;
+            }
+        .registroPolitica{
+                color: black
+            }
+        
+    
+    
+    
+    /* FOOTER */
+    footer{
+        margin: 0;
+        padding: 0;
+        font-family: Roboto;
+    }
+    /*:::::Pie de Pagina*/
+    .pie-pagina{
+        width: 100%;
+        background-color: black;
+    }
+    .pie-pagina .grupo-1{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:50px;
+        padding: 45px 0px;
+    }
+    
+    .pie-pagina .grupo-1 .footercolumna .footerTitulo{
+        color: #fff;
+        margin-bottom: 25px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .pie-pagina .grupo-1 .footercolumna .enlacesInteres{
+        color: #fff;
+        margin-bottom: 25px;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .pie-pagina .grupo-1 .footercolumna p{
+        color: #efefef;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+    
+    .pie-pagina .grupo-1 .footercolumna .footerEnlaces{
+        color: #efefef;
+        margin-bottom: 10px;
+        text-align: center;
+        /* margin-left: 100px; */
+    }
+        .pie-pagina .grupo-1 .red-social{
+        display: inline-block center;
+        text-decoration: none;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    .pie-pagina .grupo-2{
+        background-color: darkgrey;
+        padding: 10px 10px;
+        text-align: center;
+        color: #fff;
+    }
+    .pie-pagina .grupo-2 small{
+        font-size: 15px;
+    }
+    
+    .bi-facebook{
+        font-size: 40px;
+        fill: #3b5998;
+        color: #3b5998 ;
+    }
+    .bi-instagram{
+        font-size: 40px;
+        fill: crimson;
+        color: crimson;
+    }
+    .bi-twitter{
+        font-size: 40px;
+        fill: #00acee;
+        color: #00acee;
+    }
+    
+    .bi-facebook:hover {
+        fill: white;
+        color:white;
+    }
+    .bi-instagram:hover {
+        fill: white;
+        color:white;
+    }
+    .bi-twitter:hover {
+        fill: white;
+        color:white;
+    }
+    .bi-suit-heart-fill{
+        width: 15px;
+        height: 15px;
+        color: red;
+        display: inline-block;
+      }
+    
+    
+    .img-circulo {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 100%;
+    }
+    
+    .img-circulo:hover {
+        opacity: 85%;
+    }
+    /* .form-group{
+        text-align: center;
+        font-weight: bold;
+        color: black;
+    }
+    .form-control{
+        margin: auto;
+    }
+    .btnEnviar{
+        margin: 0;
+        position: absolute;
+        left: 48%;
+        font-size: 25px;
+        border-color: rgb(196, 39, 18);
+        color: whitesmoke;
+    } */
+    
+    /* card deck -> página principal */
+    
+    .card-title {
+        text-align: center;
+    }
+    
+    .card-img-top {
+        position: relative;
+        left: 50%;
+    }
+    .container2{
+        font-weight: 600;
+        font-size: 16px;
+        
+    }
+    .container{
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .container1{
+        width: 450px;
+        height: 600px;
+        border: 1px solid black;
+        padding: 50px;
+        margin: 20px;
+        text-align: left;
+      }
+    
