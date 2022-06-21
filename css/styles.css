@@ -13,4 +13,10 @@ footer {
 
 .iconos-sociales {
     font-size: 2rem;
+    color: white;
+}
+
+.logotipo {
+    width: 15%;
+    height: 15%;
 }
