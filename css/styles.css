@@ -2,13 +2,24 @@ body{
     font-family:Roboto;
 }
 
+.logotipo {
+    width: 15%;
+    height: 15%;
+}
+
 footer {
     color:white;
     background-color: #3A4750;
-  }
+}
 
 .iconos-navegacion {
     font-size: 2rem;
+    color: black;
+}
+
+.links-navegacion{
+    text-decoration: none !important;
+    color: black;
 }
 
 .iconos-sociales {
@@ -16,7 +27,6 @@ footer {
     color: white;
 }
 
-.logotipo {
-    width: 15%;
-    height: 15%;
+.links-faq {
+    color: white !important;
 }
