@@ -1,239 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/carousel/">
-    <link href="./css/carousel.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/4.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OutShoes - Tu outlet de calzado online</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+<body>
 
-<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="https://getbootstrap.com/docs/4.6/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="https://getbootstrap.com/docs/4.6/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
+  <header>
+
+    <nav class="navbar navbar-expand-md">
     
-  </head>
-  <body>
-    <header>
-      <div id="head">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a href="./index.html"><img  id="logo" src="./img/logo.png" style="width: 180px;"></a>
-       
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgb(196, 39, 18); color:white;">
+      <div class="container">
+
+        <img class="navbar-brand logotipo mt-2" src="./img/logo.svg" alt="OutShoes">
+      
+        <button class="navbar-dark navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse"  id="navbarCollapse">
-          <div id="buscar"style="margin-left:100px;">
-                   <form class="form-inline" >
-          <input class="form-control mr-sm-2" style="width:300px; " type="text" placeholder="Buscar"aria-label="Search">
-          
-          <button class="btn btn-outline-success my-2 my-sm-0" style="background-color: rgb(196, 39, 18); color: whitesmoke; border-color: rgb(196, 39, 18)" type="submit">Buscar</button>
-        </form></div>
 
-        <div class="menu"  id="navbarCollapse">
-          <ul class="nav" id="menu"  style="position:right; margin-left: 50px;">
-            <li>
-            
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-sm-center text-xs-center">
+            <li class="nav-item active">
+             <a class="nav-link" href="./index.html">Inicio<span class="sr-only">(current)</span></a>
+           </li>
+            <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorías
+             </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./categorias/dama.html">Dama</a>
+                <a class="dropdown-item" href="./categorias/caballeros.html">Caballero</a>
+                <a class="dropdown-item" href="./categorias/nina.html">Niña</a>
+                <a class="dropdown-item" href="./categorias/nino.html">Niño</a>
+                <a class="dropdown-item" href="./categorias/bebe.html">Bebés</a>
+             </div>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="./contacto.html">Contacto</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="./nosotros.html">Acerca de nosotros</a>
+           </li>
+         </ul>
 
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="./caballeros.html">Caballeros</a>
-                  <a class="dropdown-item" href="./dama.html">Damas</a>
-                  <a class="dropdown-item" href="./niños.html">Niños</a>
-                  <a class="dropdown-item" href="./Bebes.html">Bebes</a>
-                </div>
-              </div>
-            </li>
-                </div>
-              </div></a>
-           <div class="menu2">
-              <a class= "menuNosotros" class="nav-link" href="./nosotros.html" style="color:white">Nosotros</a>        
-              <a class= "menuContactanos" class="nav-link" href="./contacto.html" style="color:white">Contáctanos</a>
-           </div>
-      
-          <a href="./favoritos.html"><i class="bi bi-heart"></i></a>         
-          <a href="./carrito.html"><i class="bi bi-cart3"></i></a>     
-          <a href="./LogIn.html"><i class="bi bi-person-circle"></i></a>
-       
-      
-          
+         <form class="form-inline my-2 my-lg-0 justify-content-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Ingresa tu búsqueda" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+         </form>
+
+       </div>
+
+      </div> 
+
+    </nav>
+
+    <div class="px-3 py-2 border-bottom mb-3">
+
+      <div class="container">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-left  text-md-left text-sm-center text-xs-center">
+            <span class="align-text-bottom saludo">¡Hola, Visitante!</span>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-right  text-md-right text-sm-center text-xs-center">
+            <a href="./cuenta/ingreso.html" class="links-navegacion px-3">
+              <i class="bi bi-person iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">
+              </i>
+            </a>
+            <a href="./cuenta/favoritos.html" class="links-navegacion px-3">
+              <i class="bi bi-heart iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Lista de favoritos">
+              </i>
+            </a>
+            <a href="./cuenta/carrito.html" class="links-navegacion px-3">
+              <i class="bi bi-cart2 iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Carrito de compras">
+              </i>
+            </a>
+
+          </div>
+
         </div>
-      </nav>
-    </div>
-    </header>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<main role="main">
 
-  <section class="jumbotron text-center">
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <div class="container my-5" role="main">
+
+        <!-- A partir de aquí se modifica el cuerpo de la página -->
+
+    <hr class="mt-5 mb-5">
+
     <div class="container">
-      <h1 class="jumbotron-heading">Acerca del equipo</h1>
-      <p class="lead text-muted">
-        OutShoes es un e-commerce destinado a la venta de calzado de las marcas más reconocidas del país con precios económicos y envíos a toda la república mexicana.
-      </p>
-      
-    </div>
-  </section>
-<!-- inicia cuerpo -->
-<div class="card-deck">
-  <div class="card">
-    <img src="./img/saul.jpg"  class="img-circulo">
-    <div class="card-body">
-      <h5 class="card-title" >Saul Dominguez</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">Nací un 11 de abril de 1994 en la ciudad de México. Soy el más pequeño de 3 hermanos.Estoy estudiando una carrera en ingeniería en la uam Azcapotzalco, tengo 28 años, me gusta mucho 
-        jugar videojuegos, salir con mis amigos y pasar tiempo con mi familia..</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-       <p> <a href=""><i class="bi bi-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/saul-antonio-dominguez-uribe-72ab1323a/"><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-file-person"></i></a></p>
 
-    </div>
-  </div>
-  <div class="card">
-    <img src="./img/hector.jpeg" class="img-circulo" >
-    <div class="card-body">
-      <h5 class="card-title">Héctor Zamora</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">Mi nombre es Héctor Zamora, nací el 12 de marzo de 1991, soy de la Ciudad de México. 
-        Estudié ingeniería civil, sin embargo, en la actualidad me encuentro estudiando en un bootcamp sobre programación en JAVA.
-        Tengo planeado convertirme en un desarrollador Fullstack.</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-     <p> <a href=""><i class="bi bi-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/hazb/"><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-file-person"></i></a></p>
+      <div id="contenido-nosotros" class="row justify-content-center row-cols-1">
 
+        <!-- <div class="col my-4">
 
-    </div>
-  </div>
-  <div class="card">
-    <img src="./img/daniela.jpeg" class="img-circulo">
-    <div class="card-body">
-      <h5 class="card-title">Daniela Marlen Moreno</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">Soy Daniela Moreno, tengo 28 años, soy originaria de Tampico, Tamaulipas.
-        Estudíe la carrera de Ingeniería Mecatrónica, aunque la mayoría de mis empleos fueron de otra área,
-        quise cambiar mi rumbo con la programacion de páginas web.
-        Mi color favorito es el morado :)</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-      <p><a href=""><i class="bi bi-envelope"></i></a>
-        <a href="//www.linkedin.com/in/danielamarlenmorenoperez/"><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-file-person"></i></a></p>
-    </div>
-  </div>
-</div>
-<div class="card-deck">
-  <div class="card">
-    <img src="../img/gabriel.jpeg" class="img-circulo">
-    <div class="card-body">
-      <h5 class="card-title">Gabriel Malacara</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">Mi nombre es Gabriel Malacara, naci el 03 de enero de 1996, tengo 26 años, soy originario de la ciudad de Leon Gto donde actualmente
-        radico. Estoy casado desde hace 3 años y tengo una hija de 3 años de edad.
-       actualmente estoy estudiando Administracion de las finanzas.</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-      <p><a href=""><i class="bi bi-envelope"></i></a>
-        <a href="//www.linkedin.com/in/gabriel-malacara-876716181/"><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-file-person"></i></a></p>
-     
-    </div>
-  </div>
-  <div class="card">
-    <img src="./img/tyron.jpeg" class="img-circulo">
-    <div class="card-body">
-      <h5 class="card-title">Tyron Vergara</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">Mi nombre es Tyron Vergara y soy un estudiante recién egresado de ingeniería en computación. El desarrollo de aplicaciones web es un área en la que me emociona trabajar y considero que esta es una oportunidad para incorporar mis habilidades de comunicación, trabajo en equipo, orientación al detalle y gestión del tiempo en su equipo.</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-      <p><a href=""><i class="bi bi-envelope"></i></a>
-      <a href="//www.linkedin.com/in/tyron-vergara-guerra/"><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-github"></i></a>
-        <a href=""><i class="bi bi-file-person"></i></a></p>
+          <div class="card">
 
-    </div>
-  </div>
-  <div class="card">
-    <img src="./img/antonio.jpeg" class="img-circulo">
-    <div class="card-body">
-      <h5 class="card-title">José Antonio Bonilla</h5>
-      <p class="text-muted">Desarrollador Full-Stack</p>
-      <p class="card-text">He decidido cambiar de rumbo e iniciar una carrera en la programación.
-        Me gusta leer, escribir y escuchar todo tipo de musica.
-        Considero que la responsanilidad personal es una de mis fortalezas.</p>
-      <p class="card-text"><small class="text-muted">Contacto</small></p>
-      <p class="logos">
-        <a href=""><i class="bi bi-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/antonio-bonilla-67aba4208/"><i class="bi bi-linkedin"></i></a>
-          <a href=""><i class="bi-github"></i></a>
-          <a href=""><i class="bi bi-file-person"></i></a></p>
-      
-    </div>
-  </div>
-</div>
-<br>
-<br>
-  <!-- FOOTER -->
-  <footer class="pie-pagina">
-    <div class="grupo-1">
-        <div class="footercolumna">
-            <h2 class="footerTitulo"><strong> SOBRE NOSOTROS </strong></h2>
-            <p class="footerNosotros"> Somos una empresa dedicada a la venta de zapato a precio de outlet en internet con varios años de experiencia en el sector.</p>
-        </div>
-        <div class="footercolumna">
-            <h2 class="footerTitulo"><strong> ENLACES DE INTERES </strong></h2>
-            <p class= enlacesInteres><a class="footerEnlaces" href="./PreguntasFrecuentes.html">Preguntas frecuentes</a></p>
-              <p class= enlacesInteres><a class= enlacesInteres class="footerEnlaces" href="./contacto.html">Contáctanos</a></p>
-              <p class= enlacesInteres><a class="footerEnlaces" href="./soporte.html">Ayuda y Soporte</a></p>
-        </div>
-        <div class="footercolumna">
-            <h2 class="footerTitulo"><strong> REDES SOCIALES </strong></h2>
-            <div class="red-social">
-              <a class= "facebook" href="http://www.facebook.com"><i class="bi bi-facebook"></i></a>
-              <a class= "instagram" href="http://www.instragram.com"><i class="bi bi-instagram"></i></a>
-              <a class="twitter" href="http://www.twitter.com"><i class="bi bi-twitter"></i></a>
-                
+            <div class="card-body">
+
+              <div class="row">
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <img class="img-fluid rounded" src="./img/nosotros/hector.jpeg" alt="Fotografía de Hector">
+                </div>
+
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+
+              </div>
+
             </div>
+
+          </div>
+
+        </div> -->
+    
+      </div>
+    
+    </div>
+
+    <hr class="mt-5 mb-5">
+
+        <!-- A partir de aquí se deja de modificar el cuerpo de la página -->
+
+  </div>
+
+  <footer>
+
+    <div class="container p-4">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p-4">
+          <h2 class="pb-3 text-center">Sobre nosotros</h2>
+
+          <p class="mx-3"> Somos una empresa dedicada a la venta de zapato a precio de outlet en internet con varios años de experiencia en el sector.
+          </p>
+
         </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p-4">
+          <h2 class="pb-3 text-center">Enlaces de interés</h2>
+
+          <nav class="nav flex-column text-center">
+            <a class="nav-link links-faq" href="./preguntas-frecuentes.html">Preguntas frecuentes</a>
+            <a class="nav-link links-faq" href="./contacto.html">Contáctanos</a>
+            <a class="nav-link links-faq" href="./soporte.html">Ayuda y Soporte</a>
+          </nav>
+
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p-4">
+          <h2 class="pb-3 text-center">Redes sociales</h2>
+
+          <nav class="nav justify-content-center">
+            <a class="nav-link links-faq" href="http://www.facebook.com"><i class="bi bi-facebook iconos-sociales"></i></a>
+            <a class="nav-link links-faq" href="http://www.instragram.com"><i class="bi bi-instagram iconos-sociales"></i></a>
+            <a class="nav-link links-faq" href="http://www.twitter.com"><i class="bi bi-twitter iconos-sociales"></i></a>
+          </nav>
+
+        </div>
+
+      </div>
+
     </div>
-    <div class="grupo-2">
-        <small>&copy; 2022 <b>OutShoes</b> Hecho con <i class="bi bi-suit-heart-fill"></i> para la Cohorte 13- Todos los Derechos Reservados.</small>
-    </div>
-    </footer>
-</main>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.6/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-      <script src="https://getbootstrap.com/docs/4.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-      
-  </body>
+  </footer>
+  <script src="./js/nosotros.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  
+</body>
 </html>
-
-
