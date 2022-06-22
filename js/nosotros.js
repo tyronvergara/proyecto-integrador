@@ -41,52 +41,62 @@ function agregarTarjeta(persona){
     itemsContainer.innerHTML += itemHTML;
 }
 
-let hector = {"nombre": "Héctor Zamora", 
-            "imagen": "./img/nosotros/hector.jpeg", 
-            "carrera": "Ingeniería Civil",
-            "linkedin": "",
-            "github": "",
-            "email": "", 
-            "descripcion": "Mi nombre es Héctor Zamora, nací el 12 de marzo de 1991, soy de la Ciudad de México. Estudié ingeniería civil, sin embargo, en la actualidad me encuentro estudiando en un bootcamp sobre programación en JAVA. Tengo planeado convertirme en un desarrollador Fullstack."};
-let daniela = {"nombre": "Daniela Moreno", 
-                "imagen": "./img/nosotros/daniela.jpeg", 
-                "carrera": "Ingeniería Mecatrónica",
-                "linkedin": "",
-                "github": "",
-                "email": "", 
-                "descripcion": "Soy Daniela Moreno, tengo 28 años, soy originaria de Tampico, Tamaulipas. Estudíe la carrera de Ingeniería Mecatrónica, aunque la mayoría de mis empleos fueron de otra área, quise cambiar mi rumbo con la programacion de páginas web."};
-let tyron = {"nombre": "Tyron Vergara", 
-            "imagen": "./img/nosotros/tyron.jpeg", 
-            "carrera": "Ingeniería en Computación",
-            "linkedin": "https://www.linkedin.com/in/tyronvergara/",
-            "github": "https://github.com/tyronvergara",
-            "email": "tyron.vergara@gmail.com",  
-            "descripcion": "Ingeniero en computación enfocado en el desarrollo de aplicaciones web, fanático de la tecnología y amante de aprender cosas nuevas."};
-let gabriel = {"nombre": "Gabriel Malacara", 
-                "imagen": "./img/nosotros/gabriel.jpeg", 
-                "carrera": "Licenciatura en Administración y Finanzas",
-                "linkedin": "https://www.linkedin.com/in/gabomalacara/",
-                "github": "https://github.com/Gabomalacara",
-                "email": "jgabrielmr@gmail.com", 
-                "descripcion": "Estudio administración y finanzas pero también soy un apasionado de la tecnología con un especial interés en ciencia de datos. Estoy interesado en colaborar con empresas enfocadas a la industria fintec que me permitan continuar con mi desarrollo como programador"};
-let antonio = {"nombre": "Antonio Bonilla", 
-                "imagen": "./img/nosotros/antonio.jpeg", 
-                "carrera": "Ingeniería Geofísica",
-                "linkedin": "https://www.linkedin.com/in/antoniojoba/",
-                "github": "https://github.com/JoseAntonioBonilla",
-                "email": "joseantoniojoba@gmail.com", 
-                "descripcion": "Ingeniero Geofísico emprendiendo una nueva etapa como desarrollador Java Full Stack. Me gusta tecnológica, escribir y conocer nuevos generos musicales."};
-let saul = {"nombre": "Saúl Domínguez", 
-            "imagen": "./img/nosotros/saul.jpg", 
-            "carrera": "Ingeniería en Algo",
-            "linkedin": "",
-            "github": "",
-            "email": "",  
-            "descripcion": "Nací un 11 de abril de 1994 en la ciudad de México. Soy el más pequeño de 3 hermanos.Estoy estudiando una carrera en ingeniería en la uam Azcapotzalco, tengo 28 años, me gusta mucho jugar videojuegos, salir con mis amigos y pasar tiempo con mi familia."};
+let personas = [
+    {"nombre": "Héctor Zamora", 
+    "imagen": "./img/nosotros/hector.jpeg", 
+    "carrera": "Ingeniería Civil",
+    "linkedin": "",
+    "github": "",
+    "email": "", 
+    "descripcion": "Mi nombre es Héctor Zamora, nací el 12 de marzo de 1991, soy de la Ciudad de México. Estudié ingeniería civil, sin embargo, en la actualidad me encuentro estudiando en un bootcamp sobre programación en JAVA. Tengo planeado convertirme en un desarrollador Fullstack."},
+    
+    {"nombre": "Daniela Moreno", 
+    "imagen": "./img/nosotros/daniela.jpeg", 
+    "carrera": "Ingeniería Mecatrónica",
+    "linkedin": "",
+    "github": "",
+    "email": "", 
+    "descripcion": "Soy Daniela Moreno, tengo 28 años, soy originaria de Tampico, Tamaulipas. Estudíe la carrera de Ingeniería Mecatrónica, aunque la mayoría de mis empleos fueron de otra área, quise cambiar mi rumbo con la programacion de páginas web."},
+    
+    {"nombre": "Tyron Vergara", 
+    "imagen": "./img/nosotros/tyron.jpeg", 
+    "carrera": "Ingeniería en Computación",
+    "linkedin": "https://www.linkedin.com/in/tyronvergara/",
+    "github": "https://github.com/tyronvergara",
+    "email": "tyron.vergara@gmail.com",  
+    "descripcion": "Ingeniero en computación enfocado en el desarrollo de aplicaciones web, fanático de la tecnología y amante de aprender cosas nuevas."},
+    
+    {"nombre": "Gabriel Malacara", 
+    "imagen": "./img/nosotros/gabriel.jpeg", 
+    "carrera": "Licenciatura en Administración y Finanzas",
+    "linkedin": "https://www.linkedin.com/in/gabomalacara/",
+    "github": "https://github.com/Gabomalacara",
+    "email": "jgabrielmr@gmail.com", 
+     "descripcion": "Estudio administración y finanzas pero también soy un apasionado de la tecnología con un especial interés en ciencia de datos. Estoy interesado en colaborar con empresas enfocadas a la industria fintec que me permitan continuar con mi desarrollo como programador"},
+    
+    {"nombre": "Antonio Bonilla", 
+    "imagen": "./img/nosotros/antonio.jpeg", 
+    "carrera": "Ingeniería Geofísica",
+    "linkedin": "https://www.linkedin.com/in/antoniojoba/",
+    "github": "https://github.com/JoseAntonioBonilla",
+    "email": "joseantoniojoba@gmail.com", 
+    "descripcion": "Ingeniero Geofísico emprendiendo una nueva etapa como desarrollador Java Full Stack. Me gusta tecnológica, escribir y conocer nuevos generos musicales."},
+    
+    {"nombre": "Saúl Domínguez", 
+    "imagen": "./img/nosotros/saul.jpg", 
+    "carrera": "Ingeniería en Algo",
+    "linkedin": "",
+    "github": "",
+    "email": "",  
+    "descripcion": "Nací un 11 de abril de 1994 en la ciudad de México. Soy el más pequeño de 3 hermanos.Estoy estudiando una carrera en ingeniería en la uam Azcapotzalco, tengo 28 años, me gusta mucho jugar videojuegos, salir con mis amigos y pasar tiempo con mi familia."}
+];
 
-agregarTarjeta(hector);
-agregarTarjeta(daniela);
-agregarTarjeta(tyron);
-agregarTarjeta(gabriel);
-agregarTarjeta(antonio);
-agregarTarjeta(saul);
+function azar(array) {
+    array.sort(() => Math.random() - 0.5);
+  }
+
+azar(personas);
+
+personas.forEach(element => {
+    agregarTarjeta(element)
+});
