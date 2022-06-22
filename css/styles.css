@@ -7,28 +7,43 @@ body{
     height: 15%;
 }
 
+.saludo {
+  font-weight: bold;
+  color: #303841;
+}
+
+.iconos-navegacion {
+  font-size: 2rem;
+  color: #303841;
+}
+
+.links-navegacion{
+  text-decoration: none !important;
+  color: #303841;
+}
+
 footer {
     color:white;
     background-color: #3A4750;
 }
 
-.iconos-navegacion {
-    font-size: 2rem;
-    color: black;
-}
-
-.links-navegacion{
-    text-decoration: none !important;
-    color: black;
-}
-
 .iconos-sociales {
-    font-size: 2rem;
-    color: white;
+  font-size: 2rem;
+  color: white;
+}
+
+.iconos-sociales:hover,
+.iconos-sociales:focus {
+  color: #eeeeee;
 }
 
 .links-faq {
-    color: white !important;
+  color: white;
+}
+
+.links-faq:hover,
+.links-faq:focus {
+  color: #eeeeee;
 }
 
 /* Inician configuraciones de la NavBar */ 
