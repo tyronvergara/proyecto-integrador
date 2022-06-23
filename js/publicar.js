@@ -109,27 +109,22 @@ botonEnviar.addEventListener("click", (event) => {
       cajaAlerta.className = "alert alert-success alert-dismissible fade show";
       cajaAlerta.style.display="block";
 
-      console.log(nombreProducto);
-      console.log(descripcionProducto);
-      console.log(precioProducto);
-      console.log(imagenProducto);
-
       producto.nombre = nombreProducto;
       producto.descripcion = descripcionProducto;
       producto.precio =  precioProducto;
       producto.imagen = imagenProducto;
-
-      let arregloProductos = localStorage.getItem("productos");
       
-      if (arregloProductos) {
-          arregloProductos.push(JSON.stringify(producto))
+      if (localStorage.getItem("productos")) {
+          let arregloProductos = JSON.parse(localStorage.getItem("productos") || "[]");
+          arregloProductos.push(producto)
+          localStorage.setItem("productos", JSON.stringify(arregloProductos));
+
       } else {
           let arreglo = [];
-          arreglo.push(JSON.stringify(producto));
+          arreglo.push(producto);
           localStorage.setItem("productos", JSON.stringify(arreglo));
       }
-      
-      console.log(localStorage.getItem("productos"));
+    
       
       // Regresando el formulario a datos en blanco
       document.getElementById("nombre").value = "";
