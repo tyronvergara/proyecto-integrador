@@ -4,13 +4,14 @@ let listaAlerta = document.getElementById("alerta-lista");
 let textoAlerta = document.getElementById("alerta-texto");
 
 function validarNombre(nombre){
-    if (registroNombre.length < 3 || nombre > 100) {
+    if (nombre.length < 3 || nombre > 100) {
       return false;
     }
     return true;
   } //validarNombre
+
   function validarApellido(apellido){
-    if (registroAprellido < 3 || apellido > 100) {
+    if (apellido.length < 3 || apellido > 100) {
       return false;
     }
     return true;
@@ -27,7 +28,7 @@ function validarNombre(nombre){
   } //validarEmail
 
   function validarTelefono(telefono){
-    if (isNaN(telefono) || telefono.length === 10) {
+    if (isNaN(telefono) || telefono.length < 10 || telefono.length > 10) {
       return false;
     }
     return true;
@@ -38,22 +39,20 @@ function validarNombre(nombre){
     if (password.match(passwordValida)){
      return true;
     }
-    if (password.length < 8  || password.length > 20 ) {
+    if (password.length <= 8  || password.length >= 20 ) {
       return false;
     }
     return true;
   }//validarPassword
 
-  function validarConfirmPasswords() {
-    registroPassword = document.getElementById('registroPassword');
-    confirmPassword = document.getElementById('confirmPassword');
-        if (regitroPassword != confirmPassword) {
-      return false;
-    } return true; 
+  function validarConfirmPasswords(password2, password) {
+    if (password2 == password) {
+      return true;
+    } return false; 
     }//confirmPasswords
 
     function validarEdad(edad){
-      if (isNaN(edad) || edad.length === 2 && registroEdad <= 18 || edad >= 80 ) {
+      if (isNaN(edad) || edad <= 18 || edad >= 80 ) {
         return false;
       }
       return true;
@@ -67,30 +66,36 @@ botonEnviar.addEventListener("click", (event) => {
     
     event.preventDefault();
 
-    let nombreFormulario = document.getElementById("nombre").value;
-    let apellidoFormulario = document.getElementById("apellido").value;
-    let correoFormulario = document.getElementById("correoElectronico").value;
-    let telefonoFormulario = document.getElementById("telefono").value;
+    let nombreFormulario = document.getElementById("registroNombre").value;
+    let apellidoFormulario = document.getElementById("registroApellido").value;
+    let correoFormulario = document.getElementById("registroCorreoElectronico").value;
+    let telefonoFormulario = document.getElementById("registroTelefono").value;
     let passwordFormulario = document.getElementById('registroPassword').value;
-    let confirmPasswordFormulario = document.getElementById('confirmPassword').value;
-    let edadFormulario = document.getElementById("edad").value;
+    let confirmPasswordFormulario = document.getElementById('confirmContraseña').value;
+    let edadFormulario = document.getElementById("registroEdad").value;
   
    
     let listaErrores = "";
 
+    console.log(nombreFormulario)
     
     // Validaciones...
 
-    if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario) && 
-          validarApellido(apellidoFormulario) && validarPassword(passwordFormulario) &&
-          validarTelefono(telefonoFormulario) && validarConfirmPasswords(confirmPasswordFormulario) && 
-          validarEdad(edadFormulario) ) ) {
+    if ( !(validarNombre(nombreFormulario) && validarApellido(apellidoFormulario) && 
+    validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
+    validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) &&
+    validarEdad(edadFormulario))) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
             cajaAlerta.style.display="block";
 
+
             if ( ! validarNombre(nombreFormulario) ) {
-              listaErrores += "<li>Ingresa un nombre válido (entre 2 y 100 caracteres)</li>";
+              listaErrores += "<li>Ingresa un nombre válido (entre 3 y 40 caracteres)</li>";
+            }
+
+            if ( ! validarNombre(apellidoFormulario) ) {
+              listaErrores += "<li>Ingresa un apellido válido (entre 3 y 40 caracteres)</li>";
             }
 
             if ( ! validarEmail(correoFormulario) ) {
@@ -101,37 +106,41 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Ingresa un telefono válido (número de teléfono a 10 digitos)</li>";
             }
 
-            if ( ! validarAsunto(asuntoFormulario) ) {
-              listaErrores += "<li>Ingresa un asunto válido (minimo 5 caracteres y maximo 1000) </li>";
+            if ( ! validarPassword(passwordFormulario) ) {
+              listaErrores += "<li>Ingresa una contraseña válida (minimo 6 caracteres y maximo 20) </li>";
             }
 
-            if ( ! validarMensaje(mensajeFormulario) ) {
-              listaErrores += "<li>Ingresa un mensaje válido (minimo 5 caracteres y maximo 1000) </li>";
+            if ( ! validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) ) {
+              listaErrores += "<li>Las contraseñas no coinciden</li>";
             }
+            if ( ! validarEdad(edadFormulario) ) {
+              listaErrores += "<li>Favor de ingresar una edad válida(solo mayores de edad 18+)</li>";
+            }
+
+
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
 
             listaAlerta.innerHTML = listaErrores;
 
+console.log(listaErrores)
+
             window.scrollTo(0, 0);
     } else {
-
-      textoAlerta.innerHTML = "¡Su mensaje ha sido enviado correctamente!"
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
+      textoAlerta.innerHTML = "Regístro Exitoso"
 
-
-      Email.send(datosEmail).then(
-        message =>  cajaAlerta.style.display="block"
-
-    );
 
     // Regresando el formulario a datos en blanco
-      document.getElementById("correoElectronico").value = "";
-      document.getElementById("mensaje").value = "";
-      document.getElementById("nombre").value = "";
-      document.getElementById("telefono").value = "";
-      document.getElementById("asunto").value = "";
+      document.getElementById("registroNombre").value = "";  
+      document.getElementById("registroApellido").value = "";    
+      document.getElementById("registroCorreoElectronico").value = "";
+      document.getElementById("registroTelefono").value = "";
+      document.getElementById("registroPassword").value = "";
+      document.getElementById("confirmContraseña").value = "";
+      document.getElementById("registroEdad").value = "";
+      
       
       botonEnviar.disabled = true;
 
