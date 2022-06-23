@@ -17,7 +17,6 @@ function validarNombre(nombre){
   } //validarApellido
 
   function validarEmail(direccion) {
-
     let direccionValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (direccion.match(direccionValida)){
@@ -34,19 +33,8 @@ function validarNombre(nombre){
     return true;
   } //validarTelefono
 
-  function verificarPasswords() {
-    registroPassword = document.getElementById('registroPassword');
-    confirmPassword = document.getElementById('confirmPassword');
-    if (registroPassword.value != confirmPassword.value) { 
-        return false;
-    } 
-        return true;
-    }//validarPasswords
-
-  
   function validarPassword(password){
     let passwordValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
     if (password.match(passwordValida)){
      return true;
     }
@@ -56,40 +44,47 @@ function validarNombre(nombre){
     return true;
   }//validarPassword
 
-  function validarAsunto(asunto) {
-    if (asunto.length <= 5 || asunto.length > 1000) {
+  function validarConfirmPasswords() {
+    registroPassword = document.getElementById('registroPassword');
+    confirmPassword = document.getElementById('confirmPassword');
+        if (regitroPassword != confirmPassword) {
       return false;
-    }
-    return true;
-  }//validarAsunto
+    } return true; 
+    }//confirmPasswords
+
+    function validarEdad(edad){
+      if (isNaN(edad) || edad.length === 2 && registroEdad <= 18 || edad >= 80 ) {
+        return false;
+      }
+      return true;
+    } //validarEdad
+
+ 
+
+ 
   
 botonEnviar.addEventListener("click", (event) => {
     
     event.preventDefault();
 
     let nombreFormulario = document.getElementById("nombre").value;
-    let telefonoFormulario = document.getElementById("telefono").value;
-    let mensajeFormulario = document.getElementById("mensaje").value;
+    let apellidoFormulario = document.getElementById("apellido").value;
     let correoFormulario = document.getElementById("correoElectronico").value;
-    let asuntoFormulario = document.getElementById("asunto").value;
+    let telefonoFormulario = document.getElementById("telefono").value;
+    let passwordFormulario = document.getElementById('registroPassword').value;
+    let confirmPasswordFormulario = document.getElementById('confirmPassword').value;
+    let edadFormulario = document.getElementById("edad").value;
+  
+   
     let listaErrores = "";
 
-    // Enviar de forma temporal el correo al remitente (para comprobar funcionamiento)
-    datosEmail.To = correoFormulario
-
-    // Definir "asunto" y "cuerpo" del mensaje
-
-    datosEmail.Subject = "Formulario de contacto OutShoes - " + asuntoFormulario;
     
-    datosEmail.Body = "Nombre del cliente: " + nombreFormulario + "<br>" +
-                      "Teléfono del cliente: "  + telefonoFormulario  +"<br>" +
-                      "Mensaje del cliente: " + mensajeFormulario;
-
     // Validaciones...
 
     if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario) && 
-          validarTelefono(telefonoFormulario) && validarAsunto(asuntoFormulario) && 
-          validarMensaje(mensajeFormulario) ) ) {
+          validarApellido(apellidoFormulario) && validarPassword(passwordFormulario) &&
+          validarTelefono(telefonoFormulario) && validarConfirmPasswords(confirmPasswordFormulario) && 
+          validarEdad(edadFormulario) ) ) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
             cajaAlerta.style.display="block";
