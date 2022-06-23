@@ -118,29 +118,37 @@
   <div class="container">
           <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-5 mt-3 pt-5 pb-5 pr-5">
+              <div id="alerta-caja" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
+                <strong id="alerta-texto"> ... </strong>
+                <ul id="alerta-lista">
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+             </div>
           <form method="post">
               <div class="form-group">
               <label for="registroNombre"> Nombre</label>
-              <input required type="text" class="form-control" id="nombre" autofocus placeholder="" value=""
+              <input required type="text" class="form-control" id="registroNombre" autofocus placeholder="" value=""
                 minlength="3" maxlength="40">
           </div>
             <form method="post">
               <div class="form-group">
                 <label for="registroApellido">Apellidos</label>
-                <input required type="text" class="form-control" id="apellido" autofocus placeholder="" value=""
+                <input required type="text" class="form-control" id="registroApellido" autofocus placeholder="" value=""
                   minlength="3" maxlength="40">
             </div>
               <div class="form-group">
-                <label for="correoElectronico">Correo Electrónico</label>
-                <input required type="email" class="form-control" id="correoElectronico" placeholder="" value="">
+                <label for="registroCorreoElectronico">Correo Electrónico</label>
+                <input required type="email" class="form-control" id="registroCorreoElectronico" placeholder="" value="">
             </div>
               <div class="form-group">
                 <label for="registroTelefono">Teléfono</label>
-                <input required type="tel" class="form-control" id="telefono" placeholder="" value="">
+                <input required type="tel" class="form-control" id="registroTelefono" placeholder="" value="">
             </div>
               <div class="form-group">
                 <label for="registroPassword">Contraseña</label>
-                <input required type="password" class="form-control" id="contraseña" placeholder="" value=""
+                <input required type="password" class="form-control" id="registroPassword" placeholder="" value=""
                   minlength="8" maxlength="40">
             </div>
               <div class="form-group">
@@ -234,7 +242,7 @@
 
   </footer>
 
-  <script src="./js/productos.js"></script>
+  <script src="../js/registro.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
