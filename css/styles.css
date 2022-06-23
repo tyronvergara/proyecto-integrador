@@ -192,3 +192,7 @@ footer {
   }
 
 /* Terminan configuraciones de la NavBar */ 
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+  content: "Buscar" !important;
+}
