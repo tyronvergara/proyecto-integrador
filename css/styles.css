@@ -46,6 +46,12 @@ footer {
   color: #eeeeee;
 }
 
+.boton {
+  background-color:rgb(215, 35, 35) ; 
+  border-color:#ffffff;
+}
+
+
 /* Inician configuraciones de la NavBar */ 
 
 .navbar {
