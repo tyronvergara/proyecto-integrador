@@ -39,11 +39,7 @@ function validarNombre(nombre){
     if (password.match(passwordValida)){
      return true;
     }
-<<<<<<< HEAD
     if (password.length < 6  || password.length > 20 ) {
-=======
-    if (password.length <= 8  || password.length >= 20 ) {
->>>>>>> 857e7b9f612b373db83a617670660ad769b99d06
       return false;
     }
     return true;
@@ -80,11 +76,6 @@ botonEnviar.addEventListener("click", (event) => {
   
    
     let listaErrores = "";
-<<<<<<< HEAD
-=======
-
-    console.log(nombreFormulario)
->>>>>>> 857e7b9f612b373db83a617670660ad769b99d06
     
     // Validaciones...
 
@@ -134,7 +125,6 @@ console.log(listaErrores)
 
             window.scrollTo(0, 0);
     } else {
-<<<<<<< HEAD
       let nombreFormulario = document.getElementById("registroNombre").value;
       let apellidoFormulario = document.getElementById("registroApellido").value;
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
@@ -155,12 +145,6 @@ console.log(listaErrores)
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
       textoAlerta.innerHTML = "Regístro Exitoso"
       cajaAlerta.style.display = "block";
-=======
-      listaAlerta.innerHTML = "";
-      cajaAlerta.className = "alert alert-success alert-dismissible fade show"
-      textoAlerta.innerHTML = "Regístro Exitoso"
-
->>>>>>> 857e7b9f612b373db83a617670660ad769b99d06
 
     // Regresando el formulario a datos en blanco
       document.getElementById("registroNombre").value = "";  
