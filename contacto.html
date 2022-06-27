@@ -96,56 +96,72 @@
 
   <div class="container my-5" role="main">
 
-      <!-- A partir de aquí se modifica el cuerpo de la página -->
-
     <hr class="mt-5 mb-5">
 
     <div class="container">
 
-      <div class="row justify-content-center">
+        <div class="row justify-content-center">
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-5">
 
-          <h1 class="contactanos" style="text-align: center;"> Contáctanos </h1>
-          <div id="alerta-caja" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
-             <strong id="alerta-texto"> ... </strong>
-             <ul id="alerta-lista">
-             </ul>
-             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-          </div>
+                <h1 class="contactanos" style="text-align: center; color: #D72323"> Contáctanos </h1>
+                <div id="alerta-caja" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
+                  <strong id="alerta-texto"> ... </strong>
+                  <ul id="alerta-lista">
+                  </ul>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+                
 
-          <form  method="post">
-            <div class="form-group" >
-               <label for="nombre"  >Nombre</label>
-               <input required type="text" class="form-control" id="nombre" autofocus placeholder=""value=""  minlength="3" maxlength="40">
             </div>
-            <div class="form-group" >
-               <label for="correoElectronico">Correo Electrónico</label>
-               <input required type="email" class="form-control" id="correoElectronico" placeholder="" value="">
-            </div>
-            <div class="form-group" >
-               <label for="telefono">Teléfono</label>
-               <input required type="tel" class="form-control" id="telefono" placeholder=""value=""> 
-            </div>
-            <div class="form-group" >
-               <label for="asunto">Asunto</label>
-               <input required type="text" class="form-control" id="asunto" placeholder=""value=""  minlength="3" maxlength="40">
-            </div>
-            <div class="form-group" >
-               <label for="mensaje">Mensaje</label>
-               <textarea required mensaje="" cols="30" rows="5" class="form-control" id="mensaje"></textarea>
-            </div>
-            <button type="button" id="botonEnviar" class="btn btn-secondary btn-block">Enviar</button>
-         </form>
 
+            <div class="container">
+                
+                <div class="row align-items-center ">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-5 mt-5 pt-5 pl-5 ">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img class="img-fluid rounded mb-5" src="./img/imagenContacto.jpeg">
+                </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-center  text-md-center text-sm-center text-xs-center">
+                
+                  <form  method="post">
+                    <div class="form-group" >
+                       <label for="nombre"  >Nombre</label>
+                       <input required type="text" class="form-control" id="nombre" autofocus placeholder=""value=""  minlength="3" maxlength="40">
+                    </div>
+                    <div class="form-group" >
+                       <label for="correoElectronico">Correo Electrónico</label>
+                       <input required type="email" class="form-control" id="correoElectronico" placeholder="" value="">
+                    </div>
+                    <div class="form-group" >
+                       <label for="telefono">Teléfono</label>
+                       <input required type="tel" class="form-control" id="telefono" placeholder=""value=""> 
+                    </div>
+                    <div class="form-group" >
+                       <label for="asunto">Asunto</label>
+                       <input required type="text" class="form-control" id="asunto" placeholder=""value=""  minlength="3" maxlength="40">
+                    </div>
+                    <div class="form-group" >
+                       <label for="mensaje">Mensaje</label>
+                       <textarea required mensaje="" cols="30" rows="5" class="form-control" id="mensaje"></textarea>
+                    </div>
+                    <button type="button" id="botonEnviar" class="btn btn-secondary btn-block">Enviar</button>
+                    <p><small><u>Política de privacidad</u>     <u>Términos de uso</u></small></p>
+                      <p><u>¿Ya tienes cuenta? <a href="../cuenta/ingreso.html">Inicia Sesión</a></u></p>
+                 </form>
+        
+                    </div>
+            </div>
+            </div>
         </div>
-    
-      </div>
-    
     </div>
+  </div>
 
+  
     <hr class="mt-5 mb-5">
 
       <!-- A partir de aquí se deja de modificar el cuerpo de la página -->
@@ -193,7 +209,7 @@
 
   </footer>
 
-  <script src="./JS/contacto.js"></script>
+  <script src="./js/contacto.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
