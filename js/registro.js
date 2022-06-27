@@ -39,7 +39,7 @@ function validarNombre(nombre){
     if (password.match(passwordValida)){
      return true;
     }
-    if (password.length <= 8  || password.length >= 20 ) {
+    if (password.length < 6  || password.length > 20 ) {
       return false;
     }
     return true;
@@ -76,8 +76,6 @@ botonEnviar.addEventListener("click", (event) => {
   
    
     let listaErrores = "";
-
-    console.log(nombreFormulario)
     
     // Validaciones...
 
@@ -127,10 +125,26 @@ console.log(listaErrores)
 
             window.scrollTo(0, 0);
     } else {
+      let nombreFormulario = document.getElementById("registroNombre").value;
+      let apellidoFormulario = document.getElementById("registroApellido").value;
+      let correoFormulario = document.getElementById("registroCorreoElectronico").value;
+      let telefonoFormulario = document.getElementById("registroTelefono").value;
+      let passwordFormulario = document.getElementById('registroPassword').value;
+      let edadFormulario = document.getElementById("registroEdad").value;
+
+      let usuarioRegistrado = {"nombre": nombreFormulario,
+                              "apellido": apellidoFormulario,
+                              "correo": correoFormulario,
+                              "telefono": telefonoFormulario,
+                              "edad": edadFormulario,
+                              "password": passwordFormulario};
+
+      localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
+
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
       textoAlerta.innerHTML = "Regístro Exitoso"
-
+      cajaAlerta.style.display = "block";
 
     // Regresando el formulario a datos en blanco
       document.getElementById("registroNombre").value = "";  
