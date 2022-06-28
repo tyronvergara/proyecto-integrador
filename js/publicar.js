@@ -31,6 +31,7 @@ btnFake.addEventListener('click', function(){
     let reader  = new FileReader();
 
     reader.addEventListener("load", function () {
+        preview.style.display="block";
         preview.src = reader.result;
         imagenProducto = reader.result;
       }, false);

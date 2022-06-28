@@ -129,12 +129,13 @@
               <label for="precio">Precio</label>
               <input required type="number" class="form-control" id="precio" autofocus placeholder=""value=""  minlength="3" maxlength="40">
               </div>
-            <label for="imagen">Imagen del producto</label>
             <div class="form-group">
               <label for="fileImage">Selecciona una imagen:</label>
               <input type="button" class="form-control btn-primary" value="Subir imagen" id="btnFake"> 
               <input type="file" class="form-control-file" id="fileImage" style="display:none">
-              <img id="imageFile" name="imageFile" src="" alt="Vista previa de la imagen" title="Vista previa de la imagen" />
+              <img id="imageFile" name="imageFile" style="display:none" 
+              src="" alt="Vista previa de la imagen" title="Vista previa de la imagen"
+              width="100%" class="my-5"/>
             </div>
             <button type="button" id="botonEnviar" class="btn btn-secondary btn-block">Enviar</button>
          </form>
