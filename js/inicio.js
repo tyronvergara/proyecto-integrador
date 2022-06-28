@@ -1,4 +1,4 @@
-function agregaProducto(producto){
+function agregaProducto(producto, id){
     const itemHTML =    `<div class="col mb-4">
                                 <div class="card text-center h-100">
                                         <img id="imgProducto" src="${producto.imagen}">
@@ -16,13 +16,24 @@ function agregaProducto(producto){
     const listaVendidos = document.getElementById("listaVendidos");
     // Agregar de forma temporal a "deseados" y "vendidos"
 
-    listaProductos.innerHTML += itemHTML;
-    listaDeseados.innerHTML += itemHTML;
-    listaVendidos.innerHTML += itemHTML;
+        if(id == "listaProductos"){
+                listaProductos.innerHTML += itemHTML;
+        } else {
+                listaDeseados.innerHTML += itemHTML;
+                listaVendidos.innerHTML += itemHTML;
+        }
 }
 
 let arregloProductos = JSON.parse(localStorage.getItem("productos") || "[]");
 
-arregloProductos.forEach(element => {
-        agregaProducto(element);
-});
+// arregloProductos.forEach(element => {
+//         agregaProducto(element);
+// });
+
+for (let index = 0; index < 3; index++) {
+        agregaProducto(arregloProductos[index], "listDeseados");
+}
+
+for (let index = arregloProductos.length - 1; index > arregloProductos.length - 4; index--) {
+        agregaProducto(arregloProductos[index], "listaProductos");
+}
