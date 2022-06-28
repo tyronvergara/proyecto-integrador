@@ -3,12 +3,16 @@ let cajaAlerta = document.getElementById("alerta-caja");
 let listaAlerta = document.getElementById("alerta-lista");
 let textoAlerta = document.getElementById("alerta-texto");
 
-function validarNombre(nombre){
-    if (nombre.length < 6 || nombre.length > 12) {
-      return false;
-    }
-    return true;
-  } //validarNombre
+function validarPassword(password){
+  let passwordValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (password.match(passwordValida)){
+   return true;
+  }
+  if (password.length < 6  || password.length > 20 ) {
+    return false;
+  }
+  return true;
+}//validarPassword
 
   function validarEmail(direccion) {
 
@@ -30,21 +34,17 @@ botonEnviar.addEventListener("click", (event) => {
     console.log ("lis")
     event.preventDefault();
 
-    let nombreFormulario = document.getElementById("exampleInputPassword1").value;
+    let passwordFormulario = document.getElementById("exampleInputPassword1").value;
 
     let correoFormulario = document.getElementById("exampleInputEmail1").value;
    
     let listaErrores = "";
 
-    // Enviar de forma temporal el correo al remitente (para comprobar funcionamiento)
-   
-
-    // Definir "asunto" y "cuerpo" del mensaje
-
+    
   
     // Validaciones...
 
-    if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario) 
+    if ( !  (validarEmail(correoFormulario) && validarPassword(passwordFormulario) 
           ) ) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
@@ -56,8 +56,8 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
             
             }
-            if ( ! validarNombre(nombreFormulario) ) {
-                listaErrores += "<li>Ingresa una contraseña válida </li>";
+            if ( ! validarPassword(passwordFormulario) ) {
+                listaErrores += "<li>Ingresa correctamente tu contraseña</li>";
                 
               }
             
@@ -77,9 +77,9 @@ botonEnviar.addEventListener("click", (event) => {
   
 
     // Regresando el formulario a datos en blanco
-      document.getElementById("correoElectronico").value = "";
+      document.getElementById("exampleInputEmail1").value = "";
     
-      document.getElementById("nombre").value = "";
+      document.getElementById("exampleInputPassword1").value = "";
 
       botonEnviar.disabled = true;
 
