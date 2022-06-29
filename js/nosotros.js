@@ -24,7 +24,7 @@ function agregarTarjeta(persona){
                                                     </i>
                                                 </a>
 
-                                                <a href="${persona.email}" class="card-link">
+                                                <a href="mailto:${persona.email}" class="card-link">
                                                     <i class="bi bi-envelope iconos-navegacion" data-toggle="tooltip" data-placement="top" title="Email">
                                                     </i>
                                                 </a>
