@@ -31,11 +31,9 @@ function validarPassword(password){
   
 botonEnviar.addEventListener("click", (event) => {
     
-    console.log ("lis")
     event.preventDefault();
 
     let passwordFormulario = document.getElementById("exampleInputPassword1").value;
-
     let correoFormulario = document.getElementById("exampleInputEmail1").value;
    
     let listaErrores = "";
@@ -54,26 +52,34 @@ botonEnviar.addEventListener("click", (event) => {
 
             if ( ! validarEmail(correoFormulario) ) {
               listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
-            
             }
             if ( ! validarPassword(passwordFormulario) ) {
-                listaErrores += "<li>Ingresa correctamente tu contraseña</li>";
-                
+                listaErrores += "<li>Ingresa correctamente tu contraseña</li>";    
               }
             
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
             listaAlerta.innerHTML = listaErrores
 
+            console.log(listaErrores)
+
             window.scrollTo(0, 0);
     } else {
+      let correoFormulario = document.getElementById("exampleInputEmail1").value;
+      let passwordFormulario = document.getElementById('exampleInputPassword1').value;
+    
+      let usuarioInicioSesion = {
+                              "correo": correoFormulario,
+                              "password": passwordFormulario};
+
+      localStorage.setItem("usuario", JSON.stringify(usuarioInicioSesion));
+
 
       textoAlerta.innerHTML = "¡Ingresando correctamente!"
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
 
-
-      
+    
   
 
     // Regresando el formulario a datos en blanco
