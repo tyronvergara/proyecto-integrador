@@ -48,14 +48,7 @@ botonEnviar.addEventListener("click", (event) => {
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
             cajaAlerta.style.display="block";
 
-          
-
-            if ( ! validarEmail(correoFormulario) ) {
-              listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
-            }
-            if ( ! validarPassword(passwordFormulario) ) {
-                listaErrores += "<li>Ingresa correctamente tu contraseña</li>";    
-              }
+            listaErrores += "<li>Usuario o contraseña inválido</li>";
             
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
@@ -89,9 +82,12 @@ botonEnviar.addEventListener("click", (event) => {
 
       botonEnviar.disabled = true;
 
-      window.scrollTo(0, 0);
+      window.location.href = "../index.html";
+
+      // window.scrollTo(0, 0);
     }
     
   }
+  
 
 )
