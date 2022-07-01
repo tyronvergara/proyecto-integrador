@@ -45,9 +45,9 @@ let personas = [
     {"nombre": "Héctor Zamora", 
     "imagen": "./img/nosotros/hector.jpeg", 
     "carrera": "Ingeniería Civil",
-    "linkedin": "",
-    "github": "",
-    "email": "", 
+    "linkedin": "https://www.linkedin.com/in/hazb/",
+    "github": "https://github.com/hazb91",
+    "email": "hectorazb@gmail.com", 
     "descripcion": "Mi nombre es Héctor Zamora, nací el 12 de marzo de 1991, soy de la Ciudad de México. Estudié ingeniería civil, sin embargo, en la actualidad me encuentro estudiando en un bootcamp sobre programación en JAVA. Tengo planeado convertirme en un desarrollador Fullstack."},
     
     {"nombre": "Daniela Moreno", 
