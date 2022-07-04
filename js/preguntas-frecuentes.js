@@ -1,43 +1,33 @@
 function agregarPregunta(question){
-const itemHTML =           
-                    `<div class="accordion" id="preguntas-frecuentes">
-                    <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button  class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="bi bi-patch-question-fill text-lg" ></i>
-                                        ${question.pregunta}
-                                        </button>
-                                </h2>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="container">
-                                        <div class="row justify-content-md-left">
-                                            <div class="col col-lg-2">
-                                            <i class="bi bi-arrow-right-square-fill"></i>
-                                            </div>
-                                            <div class="col-md-auto">
-                                            ${question.respuesta} 
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                            </div>`
+const itemHTML =  
+
+        `<div class="card">
+             <div class="card-header" id="${question.heading}">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target= #${question.collapse}  aria-expanded="false" aria-controls=${question.collapse}>
+                        ${question.pregunta}
+                    </button>
+                </h2>
+            </div>
+        <div id=${question.collapse} class="collapse" aria-labelledby="${question.heading}" data-parent="#accordionExample">
+                <div class="card-body">
+                    ${question.respuesta} 
+                </div>
+            </div>
+        </div>`
 
 const itemsContainer = document.getElementById("preguntas-frecuentes");
 itemsContainer.innerHTML += itemHTML;
 } //Funcion agreagar pregunta
 
-// let questions = {"pregunta": "hola", "respuesta" : "adios"}; 
+// let questions = {"pregunta": "hola", "respuesta" : "adios", "pregunta":"hola"}; 
 // agregarPregunta(questions);
-// console.log(questions.pregunta);
+
 
 
 let faq = [
-    {"pregunta": "hola", "respuesta" : "adios"},
-    {"pregunta": "hola", "respuesta" : "adios"},
+    {"heading": "1", "collapse": "1", "pregunta": "hola", "respuesta" : "adios"},
+    {"heading": "2", "collapse": "2", "pregunta": "hola", "respuesta" : "adios"},
     {"pregunta": "hola", "respuesta" : "adios"}
 ];
 
