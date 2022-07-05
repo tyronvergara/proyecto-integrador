@@ -10,12 +10,19 @@ function validarNombre(nombre){
     return true;
   } //validarNombre
 
-  function validarApellido(apellido){
-    if (apellido.length < 3 || apellido > 100) {
+  function validarApellidom(apellidom){
+    if (apellidom.length < 3 || apellidom > 100) {
       return false;
     }
     return true;
-  } //validarApellido
+  } //validarApellidoMaterno
+
+  function validarApellidop(apellidop){
+    if (apellidop.length < 3 || apellidop > 100) {
+      return false;
+    }
+    return true;
+  } //validarApellidoPaterno
 
   function validarEmail(direccion) {
     let direccionValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -67,7 +74,8 @@ botonEnviar.addEventListener("click", (event) => {
     event.preventDefault();
 
     let nombreFormulario = document.getElementById("registroNombre").value;
-    let apellidoFormulario = document.getElementById("registroApellido").value;
+    let apellidomFormulario = document.getElementById("registroApellidom").value;
+    let apellidopFormulario = document.getElementById("registroApellidop").value;
     let correoFormulario = document.getElementById("registroCorreoElectronico").value;
     let telefonoFormulario = document.getElementById("registroTelefono").value;
     let passwordFormulario = document.getElementById('registroPassword').value;
@@ -79,8 +87,8 @@ botonEnviar.addEventListener("click", (event) => {
     
     // Validaciones...
 
-    if ( !(validarNombre(nombreFormulario) && validarApellido(apellidoFormulario) && 
-    validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
+    if ( !(validarNombre(nombreFormulario) && validarApellidom(apellidomFormulario) && 
+    validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
     validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) &&
     validarEdad(edadFormulario))) {
       
@@ -92,8 +100,12 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Ingresa un nombre válido (entre 3 y 40 caracteres)</li>";
             }
 
-            if ( ! validarNombre(apellidoFormulario) ) {
-              listaErrores += "<li>Ingresa un apellido válido (entre 3 y 40 caracteres)</li>";
+            if ( ! validarApellidom(apellidomFormulario) ) {
+              listaErrores += "<li>Ingresa un apellido materno válido (entre 3 y 40 caracteres)</li>";
+            }
+
+            if ( ! validarApellidop(apellidopFormulario) ) {
+              listaErrores += "<li>Ingresa un apellido paterno válido (entre 3 y 40 caracteres)</li>";
             }
 
             if ( ! validarEmail(correoFormulario) ) {
@@ -101,7 +113,7 @@ botonEnviar.addEventListener("click", (event) => {
             }
 
             if ( ! validarTelefono(telefonoFormulario) ) {
-              listaErrores += "<li>Ingresa un telefono válido (número de teléfono a 10 digitos)</li>";
+              listaErrores += "<li>Ingresa un teléfono válido (número de teléfono a 10 digitos)</li>";
             }
 
             if ( ! validarPassword(passwordFormulario) ) {
@@ -126,14 +138,16 @@ console.log(listaErrores)
             window.scrollTo(0, 0);
     } else {
       let nombreFormulario = document.getElementById("registroNombre").value;
-      let apellidoFormulario = document.getElementById("registroApellido").value;
+      let apellidomFormulario = document.getElementById("registroApellidom").value;
+      let apellidopFormulario = document.getElementById("registroApellidop").value;
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
       let telefonoFormulario = document.getElementById("registroTelefono").value;
       let passwordFormulario = document.getElementById('registroPassword').value;
       let edadFormulario = document.getElementById("registroEdad").value;
 
       let usuarioRegistrado = {"nombre": nombreFormulario,
-                              "apellido": apellidoFormulario,
+                              "apellido materno": apellidomFormulario,
+                              "apellido paterno": apellidopFormulario,
                               "correo": correoFormulario,
                               "telefono": telefonoFormulario,
                               "edad": edadFormulario,
@@ -143,12 +157,19 @@ console.log(listaErrores)
 
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
-      textoAlerta.innerHTML = "Regístro Exitoso"
+      textoAlerta.innerHTML = "¡Registro Exitoso!"
       cajaAlerta.style.display = "block";
+
+      botonEnviar.disabled = true;
+
+      window.setTimeout(function() {
+        window.location.href = "./Ingreso.html";;
+    }, 3000);
 
     // Regresando el formulario a datos en blanco
       document.getElementById("registroNombre").value = "";  
-      document.getElementById("registroApellido").value = "";    
+      document.getElementById("registroApellidom").value = "";  
+      document.getElementById("registroApellidop").value = "";  
       document.getElementById("registroCorreoElectronico").value = "";
       document.getElementById("registroTelefono").value = "";
       document.getElementById("registroPassword").value = "";
@@ -156,7 +177,9 @@ console.log(listaErrores)
       document.getElementById("registroEdad").value = "";
       
       
-      botonEnviar.disabled = true;
+  
+    
+
 
       window.scrollTo(0, 0);
     }
