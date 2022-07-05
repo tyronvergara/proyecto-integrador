@@ -96,7 +96,7 @@ botonEnviar.addEventListener("click", (event) => {
             }
 
             if ( ! validarAsunto(asuntoFormulario) ) {
-              listaErrores += "<li>Ingresa un asunto válido (minimo 5 caracteres y máximo 1000) </li>";
+              listaErrores += "<li>Ingresa un asunto válido (mínimo 5 caracteres y máximo 1000) </li>";
             }
 
             if ( ! validarMensaje(mensajeFormulario) ) {
