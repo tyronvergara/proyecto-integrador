@@ -92,15 +92,15 @@ botonEnviar.addEventListener("click", (event) => {
             }
 
             if ( ! validarTelefono(telefonoFormulario) ) {
-              listaErrores += "<li>Ingresa un telefono válido (número de teléfono a 10 digitos)</li>";
+              listaErrores += "<li>Ingresa un télefono válido (número de teléfono a 10 digitos)</li>";
             }
 
             if ( ! validarAsunto(asuntoFormulario) ) {
-              listaErrores += "<li>Ingresa un asunto válido (minimo 5 caracteres y maximo 1000) </li>";
+              listaErrores += "<li>Ingresa un asunto válido (minimo 5 caracteres y máximo 1000) </li>";
             }
 
             if ( ! validarMensaje(mensajeFormulario) ) {
-              listaErrores += "<li>Ingresa un mensaje válido (minimo 5 caracteres y maximo 1000) </li>";
+              listaErrores += "<li>Ingresa un mensaje válido (mínimo 5 caracteres y máximo 1000) </li>";
             }
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
