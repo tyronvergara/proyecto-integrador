@@ -192,3 +192,9 @@ footer {
   }
 
 /* Terminan configuraciones de la NavBar */ 
+
+.jumbotron-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
