@@ -127,40 +127,46 @@
 
   <div class="container">
           <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-5 mt-3 pt-5 pb-5 pr-5">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-5 pt-5 pb-5 pr-5">
           <form method="post">
               <div class="form-group">
-              <label for="registroNombre"> Nombre</label>
+              <label for="registroNombre"> Nombre(s):</label>
               <input required type="text" class="form-control" id="registroNombre" autofocus placeholder="" value=""
                 minlength="3" maxlength="40">
           </div>
             <form method="post">
               <div class="form-group">
-                <label for="registroApellido">Apellidos</label>
-                <input required type="text" class="form-control" id="registroApellido" autofocus placeholder="" value=""
+                <label for="registroApellidom">Apellido Materno:</label>
+                <input required type="text" class="form-control" id="registroApellidom" autofocus placeholder="" value=""
+                  minlength="3" maxlength="40">
+            </div>
+            <form method="post">
+              <div class="form-group">
+                <label for="registroApellidop">Apellido Paterno:</label>
+                <input required type="text" class="form-control" id="registroApellidop" autofocus placeholder="" value=""
                   minlength="3" maxlength="40">
             </div>
               <div class="form-group">
-                <label for="registroCorreoElectronico">Correo Electrónico</label>
+                <label for="registroCorreoElectronico">Correo Electrónico:</label>
                 <input required type="email" class="form-control" id="registroCorreoElectronico" placeholder="" value="">
             </div>
               <div class="form-group">
-                <label for="registroTelefono">Teléfono</label>
+                <label for="registroTelefono">Teléfono:</label>
                 <input required type="tel" class="form-control" id="registroTelefono" placeholder="" value="">
             </div>
               <div class="form-group">
-                <label for="registroPassword">Contraseña</label>
+                <label for="registroPassword">Contraseña:</label>
                 <input required type="password" class="form-control" id="registroPassword" placeholder="" value=""
                   minlength="6" maxlength="20">
             </div>
               <div class="form-group">
-                <label for="registroConfirmarPassword">Confirmar Contraseña</label>
+                <label for="registroConfirmarPassword">Confirmar Contraseña:</label>
                 <input required type="password" class="form-control" id="confirmContraseña" placeholder="" value=""
                   minlength="6" maxlength="20">
             </div>
               <div class="form-group">
-                <label for="registroEdad">Edad</label>
-                <input required type="text" class="form-control" id="registroEdad" placeholder="" value="">
+                <label for="registroEdad">Fecha de nacimiento:</label>
+                <input required type="date" class="form-control" id="registroEdad" placeholder="" value="">
             </div>
             
               <button type="button" id="botonEnviar" class="btn btn-secondary btn-block mt-5">Registrarse</button>

@@ -67,12 +67,18 @@ botonEnviar.addEventListener("click", (event) => {
 
       localStorage.setItem("usuario", JSON.stringify(usuarioInicioSesion));
 
-
-      textoAlerta.innerHTML = "¡Ingresando correctamente!"
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
+      textoAlerta.innerHTML = "¡Ingresando Correctamente....!"
+      cajaAlerta.style.display = "block";
 
+      botonEnviar.disabled = true;
+
+      window.setTimeout(function() {
+        window.location.href = "../index.html";;
+    }, 3000);
     
+
   
 
     // Regresando el formulario a datos en blanco
@@ -80,11 +86,7 @@ botonEnviar.addEventListener("click", (event) => {
     
       document.getElementById("exampleInputPassword1").value = "";
 
-      botonEnviar.disabled = true;
-
-      window.location.href = "../index.html";
-
-      // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     }
     
   }
