@@ -117,7 +117,7 @@ botonEnviar.addEventListener("click", (event) => {
             }
 
             if ( ! validarPassword(passwordFormulario) ) {
-              listaErrores += "<li>Ingresa una contraseña válida (minimo 6 caracteres y maximo 20) </li>";
+              listaErrores += "<li>Ingresa una contraseña válida (mínimo 6 caracteres y máximo 20) </li>";
             }
 
             if ( ! validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) ) {
