@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Producto` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
-  `nombreProducto` VARCHAR(100) NULL,
+  `nombreProducto` VARCHAR(255) NULL,
   `descripcionProducto` VARCHAR(1000) NULL,
   `marcaProducto` INT NULL,
   PRIMARY KEY (`idProducto`),
@@ -50,8 +50,8 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`Categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Categoria` (
-  `idCategoria` INT NOT NULL,
-  `nombreCategoria` VARCHAR(45) NOT NULL,
+  `idCategoria` INT NOT NULL AUTO_INCREMENT,
+  `nombreCategoria` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idCategoria`))
 ENGINE = InnoDB;
 
@@ -61,7 +61,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Coleccion` (
   `idColeccion` INT NOT NULL AUTO_INCREMENT,
-  `nombreColeccion` VARCHAR(45) NOT NULL,
+  `nombreColeccion` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idColeccion`))
 ENGINE = InnoDB;
 
@@ -80,12 +80,12 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`Direccion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Direccion` (
-  `idDireccionEnvio` INT NOT NULL,
+  `idDireccionEnvio` INT NOT NULL AUTO_INCREMENT,
   `lineaunoDireccion` VARCHAR(255) NOT NULL,
   `lineadosDireccion` VARCHAR(255) NULL,
-  `estadoDireccion` VARCHAR(45) NOT NULL,
-  `ciudadDireccion` VARCHAR(45) NOT NULL,
-  `cpDireccion` VARCHAR(45) NOT NULL,
+  `estadoDireccion` VARCHAR(255) NOT NULL,
+  `ciudadDireccion` VARCHAR(255) NOT NULL,
+  `cpDireccion` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idDireccionEnvio`))
 ENGINE = InnoDB;
 
@@ -135,8 +135,31 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Color` (
   `idColor` INT NOT NULL AUTO_INCREMENT,
-  `nombreColor` VARCHAR(45) NULL,
+  `nombreColor` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idColor`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `outshoes`.`RelacionTalla`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `outshoes`.`RelacionTalla` (
+  `idRelacionTalla` INT NOT NULL AUTO_INCREMENT,
+  `tallaRelacion` INT NOT NULL,
+  `categoriaRelacion` INT NOT NULL,
+  PRIMARY KEY (`idRelacionTalla`),
+  INDEX `tallaRelacion_idx` (`tallaRelacion` ASC) VISIBLE,
+  INDEX `categoriaTalla_idx` (`categoriaRelacion` ASC) VISIBLE,
+  CONSTRAINT `tallaRelacion`
+    FOREIGN KEY (`tallaRelacion`)
+    REFERENCES `outshoes`.`Talla` (`idTallas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `categoriaTalla`
+    FOREIGN KEY (`categoriaRelacion`)
+    REFERENCES `outshoes`.`Categoria` (`idCategoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -152,14 +175,14 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   `categoriaInventario` INT NOT NULL,
   `coleccionInventario` INT NOT NULL,
   `precioInventario` INT NOT NULL,
-  `imagenInventario` VARCHAR(45) NULL,
-  `skuInventario` VARCHAR(45) NOT NULL,
+  `imagenInventario` VARCHAR(255) NULL,
+  `skuInventario` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idInventario`),
   INDEX `productoInventario_idx` (`productoInventario` ASC) VISIBLE,
   INDEX `colorInventario_idx` (`colorInventario` ASC) VISIBLE,
-  INDEX `tallaInventario_idx` (`tallaInventario` ASC) VISIBLE,
   INDEX `categoriaInventario_idx` (`categoriaInventario` ASC) VISIBLE,
   INDEX `coleccionInventario_idx` (`coleccionInventario` ASC) VISIBLE,
+  INDEX `tallaInventario_idx` (`tallaInventario` ASC) VISIBLE,
   CONSTRAINT `productoInventario`
     FOREIGN KEY (`productoInventario`)
     REFERENCES `outshoes`.`Producto` (`idProducto`)
@@ -170,11 +193,6 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
     REFERENCES `outshoes`.`Color` (`idColor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `tallaInventario`
-    FOREIGN KEY (`tallaInventario`)
-    REFERENCES `outshoes`.`Talla` (`idTallas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `categoriaInventario`
     FOREIGN KEY (`categoriaInventario`)
     REFERENCES `outshoes`.`Categoria` (`idCategoria`)
@@ -183,6 +201,11 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   CONSTRAINT `coleccionInventario`
     FOREIGN KEY (`coleccionInventario`)
     REFERENCES `outshoes`.`Coleccion` (`idColeccion`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `tallaInventario`
+    FOREIGN KEY (`tallaInventario`)
+    REFERENCES `outshoes`.`RelacionTalla` (`idRelacionTalla`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -215,7 +238,7 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`Carrito`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Carrito` (
-  `idCarrito` INT NOT NULL,
+  `idCarrito` INT NOT NULL AUTO_INCREMENT,
   `usuarioCarrito` INT NOT NULL,
   `inventarioCarrito` INT NOT NULL,
   `cantidadinventarioCarrito` INT NOT NULL,
@@ -239,8 +262,8 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`EstadoPedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`EstadoPedido` (
-  `idEstadoPedido` INT NOT NULL,
-  `nombreEstado` VARCHAR(45) NOT NULL,
+  `idEstadoPedido` INT NOT NULL AUTO_INCREMENT,
+  `nombreEstado` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idEstadoPedido`))
 ENGINE = InnoDB;
 
@@ -249,7 +272,7 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`HistorialPedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`HistorialPedido` (
-  `idPedido` INT NOT NULL,
+  `idPedido` INT NOT NULL AUTO_INCREMENT,
   `usuarioHistorial` INT NOT NULL,
   `inventarioHistorial` INT NOT NULL,
   `estadoHistorial` INT NOT NULL,
