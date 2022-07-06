@@ -80,13 +80,13 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`Direccion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Direccion` (
-  `idDireccionEnvio` INT NOT NULL AUTO_INCREMENT,
+  `idDireccion` INT NOT NULL AUTO_INCREMENT,
   `lineaunoDireccion` VARCHAR(255) NOT NULL,
   `lineadosDireccion` VARCHAR(255) NULL,
   `estadoDireccion` VARCHAR(255) NOT NULL,
   `ciudadDireccion` VARCHAR(255) NOT NULL,
   `cpDireccion` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idDireccionEnvio`))
+  PRIMARY KEY (`idDireccion`))
 ENGINE = InnoDB;
 
 
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Usuario` (
   `nombreUsuario` VARCHAR(255) NOT NULL,
   `apellidopUsuario` VARCHAR(255) NOT NULL,
   `apellidomUsuario` VARCHAR(255) NULL,
-  `telefonoUsuario` INT NOT NULL,
+  `telefonoUsuario` VARCHAR(10) NOT NULL,
   `correoUsuario` VARCHAR(255) NOT NULL,
   `nacimientoUsuario` DATE NOT NULL,
   `tipoUsuario` INT NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Usuario` (
     ON UPDATE NO ACTION,
   CONSTRAINT `direccionUsuario`
     FOREIGN KEY (`direccionUsuario`)
-    REFERENCES `outshoes`.`Direccion` (`idDireccionEnvio`)
+    REFERENCES `outshoes`.`Direccion` (`idDireccion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -123,10 +123,9 @@ ENGINE = InnoDB;
 -- Table `outshoes`.`Talla`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Talla` (
-  `idTallas` INT NOT NULL AUTO_INCREMENT,
-  `numeroTalla` INT NOT NULL,
-  `categoriaTalla` INT NULL,
-  PRIMARY KEY (`idTallas`))
+  `idTalla` INT NOT NULL AUTO_INCREMENT,
+  `numeroTalla` VARCHAR(5) NOT NULL,
+  PRIMARY KEY (`idTalla`))
 ENGINE = InnoDB;
 
 
@@ -152,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`RelacionTalla` (
   INDEX `categoriaTalla_idx` (`categoriaRelacion` ASC) VISIBLE,
   CONSTRAINT `tallaRelacion`
     FOREIGN KEY (`tallaRelacion`)
-    REFERENCES `outshoes`.`Talla` (`idTallas`)
+    REFERENCES `outshoes`.`Talla` (`idTalla`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `categoriaTalla`
