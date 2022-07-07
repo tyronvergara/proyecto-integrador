@@ -58,16 +58,26 @@ function validarNombre(nombre){
     } return false; 
     }//confirmPasswords
 
-    function validarEdad(edad){
-      if (isNaN(edad) || edad <= 18 || edad >= 80 ) {
-        return false;
+    function validarEdad(edad) {
+      let conversion = hoy.split('-')
+      let year = parseInt(conversion[0], 10);
+      let mes = parseInt(conversion[1], 10);
+      mes -= 1;
+      let dia = parseInt(conversion[2], 10);
+      let hoy = new Date(year, mes, dia)
+      let fechaNac = new Date(edad)
+      let edad1 = hoy.getFullYear() - fechaNac.getFullYear()
+      let mesesdif = hoy.getMonth() - fechaNac.getMonth()
+      if (
+        mesesdif < 0 ||
+        (mesesdif === 0 && hoy.getDate() < fechaNac.getDate())
+      ) {
+        edad1--
+        return true 
       }
-      return true;
-    } //validarEdad
+      return false
+    }
 
- 
-
- 
   
 botonEnviar.addEventListener("click", (event) => {
     
@@ -81,6 +91,7 @@ botonEnviar.addEventListener("click", (event) => {
     let passwordFormulario = document.getElementById('registroPassword').value;
     let confirmPasswordFormulario = document.getElementById('confirmContraseña').value;
     let edadFormulario = document.getElementById("registroEdad").value;
+    console.log(edadFormulario);
   
    
     let listaErrores = "";
@@ -124,7 +135,7 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Las contraseñas no coinciden</li>";
             }
             if ( ! validarEdad(edadFormulario) ) {
-              listaErrores += "<li>Favor de ingresar una edad válida(solo mayores de edad 18+)</li>";
+              listaErrores += "<li>Favor de ingresar una fecha de nacimiento válida</li>";
             }
 
 
@@ -157,7 +168,7 @@ console.log(listaErrores)
 
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
-      textoAlerta.innerHTML = "¡Registro Exitoso!"
+      textoAlerta.innerHTML = "¡Regístro Exitoso!"
       cajaAlerta.style.display = "block";
 
       botonEnviar.disabled = true;
@@ -174,11 +185,7 @@ console.log(listaErrores)
       document.getElementById("registroTelefono").value = "";
       document.getElementById("registroPassword").value = "";
       document.getElementById("confirmContraseña").value = "";
-      document.getElementById("registroEdad").value = "";
-      
-      
-  
-    
+      document.getElementById("registroEdad").value = ""; 
 
 
       window.scrollTo(0, 0);
