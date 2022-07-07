@@ -1,11 +1,10 @@
 function header(){
     const headerHTML = 
      `
-    
      <nav  class="navbar navbar-expand-md">
        <div class="container">
  
-         <img class="navbar-brand logotipo mt-2" src="./img/logo.svg" alt="OutShoes">
+         <img class="navbar-brand logotipo mt-2" src="../img/logo.svg" alt="OutShoes">
        
          <button class="navbar-dark navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
@@ -14,16 +13,16 @@ function header(){
          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-sm-center text-xs-center">
              <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Inicio<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="./productos.html">Productos</a>
+            <a class="nav-link" href="../productos.html">Productos</a>
          </li>
             <li class="nav-item">
-               <a class="nav-link" href="./contacto.html">Contacto</a>
+               <a class="nav-link" href="../contacto.html">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              <a class="nav-link" href="../nosotros.html">Nosotros</a>
             </li>
           </ul>
  
@@ -49,15 +48,12 @@ function header(){
            </div>
  
            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-right  text-md-right text-sm-center text-xs-center">
-             <a href="./cuenta/ingreso.html" class="links-navegacion px-3">
+             <a href="../cuenta/ingreso.html" class="links-navegacion px-3">
                <i class="bi bi-person iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">
                </i>
              </a>
-             <a href="./cuenta/favoritos.html" class="links-navegacion px-3">
-               <i class="bi bi-heart iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Lista de favoritos">
-               </i>
-             </a>
-             <a href="./cuenta/carrito.html" class="links-navegacion px-3">
+             
+             <a href="../cuenta/carrito.html" class="links-navegacion px-3">
                <i class="bi bi-cart2 iconos-navegacion" data-toggle="tooltip" data-placement="bottom" title="Carrito de compras">
                </i>
              </a>
@@ -91,9 +87,9 @@ function footer(){
     <h2 class="pb-3 text-center">Enlaces de interés</h2>
 
     <nav class="nav flex-column text-center">
-      <a class="nav-link links-faq" href="./preguntas-frecuentes.html">Preguntas frecuentes</a>
-      <a class="nav-link links-faq" href="./contacto.html">Contacto</a>
-      <a class="nav-link links-faq" href="./cuenta/registro.html">Registro</a>
+      <a class="nav-link links-faq" href="../preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a class="nav-link links-faq" href="../contacto.html">Contacto</a>
+      <a class="nav-link links-faq" href="../cuenta/registro.html">Registro</a>
     </nav>
 
   </div>
