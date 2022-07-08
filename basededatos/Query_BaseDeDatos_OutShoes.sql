@@ -28,25 +28,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `outshoes`.`Producto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`Producto` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(250) NULL,
-  `descripcion` VARCHAR(500) NULL,
-  `marca` INT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `idProducto_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `marcaProducto_idx` (`marca` ASC) VISIBLE,
-  CONSTRAINT `marcaProducto`
-    FOREIGN KEY (`marca`)
-    REFERENCES `outshoes`.`Marca` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `outshoes`.`Categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Categoria` (
@@ -81,23 +62,21 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `tipo` INT NOT NULL,
   `correo` VARCHAR(50) NOT NULL,
   `contrasena` VARCHAR(20) NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
   `apellidop` VARCHAR(50) NOT NULL,
   `apellidom` VARCHAR(50) NULL,
-  `telefono` VARCHAR(10) NOT NULL,
-  `nacimiento` DATE NOT NULL,
   `direccionuno` VARCHAR(255) NULL,
   `direcciondos` VARCHAR(255) NULL,
   `estado` VARCHAR(50) NULL,
   `ciudad` VARCHAR(100) NULL,
   `cp` VARCHAR(5) NULL,
-  PRIMARY KEY (`id`),
-  INDEX `tipoUsuario_idx` (`tipo` ASC) VISIBLE,
-  CONSTRAINT `tipoUsuario`
-    FOREIGN KEY (`tipo`)
+  `Tipo_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `Tipo_id`),
+  INDEX `fk_Usuario_Tipo_idx` (`Tipo_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Usuario_Tipo`
+    FOREIGN KEY (`Tipo_id`)
     REFERENCES `outshoes`.`Tipo` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -115,90 +94,68 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `outshoes`.`Color`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`Color` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `outshoes`.`RelacionTalla`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`RelacionTalla` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `talla` INT NOT NULL,
-  `categoria` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `tallaRelacion_idx` (`talla` ASC) VISIBLE,
-  INDEX `categoriaTalla_idx` (`categoria` ASC) VISIBLE,
-  CONSTRAINT `tallaRelacion`
-    FOREIGN KEY (`talla`)
-    REFERENCES `outshoes`.`Talla` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `categoriaTalla`
-    FOREIGN KEY (`categoria`)
-    REFERENCES `outshoes`.`Categoria` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `outshoes`.`Inventario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `sku` VARCHAR(8) NOT NULL,
-  `producto` INT NOT NULL,
-  `color` INT NOT NULL,
-  `talla` INT NOT NULL,
-  `cantidad` INT NOT NULL,
-  `categoria` INT NOT NULL,
-  `coleccion` INT NOT NULL,
-  `precio` INT NOT NULL,
-  `imagen` VARCHAR(255) NULL,
+  `talla` INT NULL,
+  `cantidad` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `productoInventario_idx` (`producto` ASC) VISIBLE,
-  INDEX `colorInventario_idx` (`color` ASC) VISIBLE,
-  INDEX `categoriaInventario_idx` (`categoria` ASC) VISIBLE,
-  INDEX `coleccionInventario_idx` (`coleccion` ASC) VISIBLE,
-  INDEX `tallaInventario_idx` (`talla` ASC) VISIBLE,
-  CONSTRAINT `productoInventario`
-    FOREIGN KEY (`producto`)
-    REFERENCES `outshoes`.`Producto` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `colorInventario`
-    FOREIGN KEY (`color`)
-    REFERENCES `outshoes`.`Color` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `categoriaInventario`
-    FOREIGN KEY (`categoria`)
-    REFERENCES `outshoes`.`Categoria` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `coleccionInventario`
-    FOREIGN KEY (`coleccion`)
-    REFERENCES `outshoes`.`Coleccion` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `tallaInventario`
+  INDEX `fk_talla_idx` (`talla` ASC) VISIBLE,
+  CONSTRAINT `fk_talla`
     FOREIGN KEY (`talla`)
-    REFERENCES `outshoes`.`RelacionTalla` (`id`)
+    REFERENCES `outshoes`.`Talla` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `outshoes`.`EstadoPedido`
+-- Table `outshoes`.`Producto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`EstadoPedido` (
+CREATE TABLE IF NOT EXISTS `outshoes`.`Producto` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sku` VARCHAR(8) NOT NULL,
+  `nombre` VARCHAR(255) NULL,
+  `descripcion` VARCHAR(610) NULL,
+  `imagen` VARCHAR(255) NULL,
+  `precio` DECIMAL(6,2) NOT NULL,
+  `Categoria_id` INT NOT NULL,
+  `Coleccion_id` INT NOT NULL,
+  `Marca_id` INT NOT NULL,
+  `Inventario_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `Categoria_id`, `Coleccion_id`, `Marca_id`, `Inventario_id`),
+  INDEX `fk_Producto_Categoria1_idx` (`Categoria_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Coleccion1_idx` (`Coleccion_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Marca1_idx` (`Marca_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Inventario1_idx` (`Inventario_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Producto_Categoria1`
+    FOREIGN KEY (`Categoria_id`)
+    REFERENCES `outshoes`.`Categoria` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Coleccion1`
+    FOREIGN KEY (`Coleccion_id`)
+    REFERENCES `outshoes`.`Coleccion` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Marca1`
+    FOREIGN KEY (`Marca_id`)
+    REFERENCES `outshoes`.`Marca` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Inventario1`
+    FOREIGN KEY (`Inventario_id`)
+    REFERENCES `outshoes`.`Inventario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `outshoes`.`Estado`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `outshoes`.`Estado` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`))
@@ -206,32 +163,31 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `outshoes`.`HistorialPedido`
+-- Table `outshoes`.`Pedido`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`HistorialPedido` (
+CREATE TABLE IF NOT EXISTS `outshoes`.`Pedido` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `usuario` INT NOT NULL,
-  `inventario` INT NOT NULL,
-  `estado` INT NOT NULL,
   `cantidad` INT NOT NULL,
-  `fecha` DATE NULL,
-  PRIMARY KEY (`id`),
-  INDEX `estadoHistorial_idx` (`estado` ASC) VISIBLE,
-  INDEX `usuarioHistorial_idx` (`usuario` ASC) VISIBLE,
-  INDEX `inventarioHistorial_idx` (`inventario` ASC) VISIBLE,
-  CONSTRAINT `estadoHistorial`
+  `producto` INT NOT NULL,
+  `estado` INT NOT NULL,
+  `usuario` INT NOT NULL,
+  PRIMARY KEY (`id`, `estado`, `producto`, `usuario`),
+  INDEX `fk_Pedido_Estado1_idx` (`estado` ASC) VISIBLE,
+  INDEX `fk_producto_idx` (`producto` ASC) VISIBLE,
+  INDEX `fk_usuario_idx` (`usuario` ASC) VISIBLE,
+  CONSTRAINT `fk_estado`
     FOREIGN KEY (`estado`)
-    REFERENCES `outshoes`.`EstadoPedido` (`id`)
+    REFERENCES `outshoes`.`Estado` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `usuarioHistorial`
+  CONSTRAINT `fk_producto`
+    FOREIGN KEY (`producto`)
+    REFERENCES `outshoes`.`Producto` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_usuario`
     FOREIGN KEY (`usuario`)
     REFERENCES `outshoes`.`Usuario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `inventarioHistorial`
-    FOREIGN KEY (`inventario`)
-    REFERENCES `outshoes`.`Inventario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
