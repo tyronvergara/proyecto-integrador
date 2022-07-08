@@ -86,7 +86,7 @@ botonEnviar.addEventListener("click", (event) => {
     
       document.getElementById("exampleInputPassword1").value = "";
 
-    window.scrollTo(0, 0);
+  
     }
     
   }
