@@ -80,15 +80,15 @@ let personas = [
     "linkedin": "https://www.linkedin.com/in/antoniojoba/",
     "github": "https://github.com/JoseAntonioBonilla",
     "email": "joseantoniojoba@gmail.com", 
-    "descripcion": "Ingeniero Geofísico emprendiendo una nueva etapa como desarrollador Java Full Stack. Me gusta tecnológica, escribir y conocer nuevos generos musicales."},
+    "descripcion": "Ingeniero Geofísico emprendiendo una nueva etapa como desarrollador Java Full Stack. Me gusta tecnológica, escribir y conocer nuevos generos musicales."}
     
-    {"nombre": "Saúl Domínguez", 
-    "imagen": "./img/nosotros/saul.jpg", 
-    "carrera": "Ingeniería en Algo",
-    "linkedin": "",
-    "github": "",
-    "email": "",  
-    "descripcion": "Nací un 11 de abril de 1994 en la ciudad de México. Soy el más pequeño de 3 hermanos.Estoy estudiando una carrera en ingeniería en la uam Azcapotzalco, tengo 28 años, me gusta mucho jugar videojuegos, salir con mis amigos y pasar tiempo con mi familia."}
+    // {"nombre": "Saúl Domínguez", 
+    // "imagen": "./img/nosotros/saul.jpg", 
+    // "carrera": "Ingeniería en Algo",
+    // "linkedin": "",
+    // "github": "",
+    // "email": "",  
+    // "descripcion": "Nací un 11 de abril de 1994 en la ciudad de México. Soy el más pequeño de 3 hermanos.Estoy estudiando una carrera en ingeniería en la uam Azcapotzalco, tengo 28 años, me gusta mucho jugar videojuegos, salir con mis amigos y pasar tiempo con mi familia."}
 ];
 
 function azar(array) {
