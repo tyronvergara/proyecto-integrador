@@ -31,12 +31,12 @@ function validarNombre(nombre){
     return false;
   } //validarEmail
 
-  function validarTelefono(telefono){
-    if (isNaN(telefono) || telefono.length < 10 || telefono.length > 20) {
-      return false;
-    }
-    return true;
-  } //validarTelefono
+  // function validarTelefono(telefono){
+  //   if (isNaN(telefono) || telefono.length < 10 || telefono.length > 20) {
+  //     return false;
+  //   }
+  //   return true;
+  // } //validarTelefono
   
   function validarMensaje(mensaje){
     if (mensaje.length <= 5 || mensaje.length > 1000 ) {
@@ -57,7 +57,7 @@ botonEnviar.addEventListener("click", (event) => {
     event.preventDefault();
 
     let nombreFormulario = document.getElementById("nombre").value;
-    let telefonoFormulario = document.getElementById("telefono").value;
+    // let telefonoFormulario = document.getElementById("telefono").value;
     let mensajeFormulario = document.getElementById("mensaje").value;
     let correoFormulario = document.getElementById("correoElectronico").value;
     let asuntoFormulario = document.getElementById("asunto").value;
@@ -71,7 +71,7 @@ botonEnviar.addEventListener("click", (event) => {
     datosEmail.Subject = "Formulario de contacto OutShoes - " + asuntoFormulario;
     
     datosEmail.Body = "Nombre del cliente: " + nombreFormulario + "<br>" +
-                      "Teléfono del cliente: "  + telefonoFormulario  +"<br>" +
+                      // "Teléfono del cliente: "  + telefonoFormulario  +"<br>" +
                       "Mensaje del cliente: " + mensajeFormulario;
 
     // Validaciones...
@@ -91,9 +91,9 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
             }
 
-            if ( ! validarTelefono(telefonoFormulario) ) {
-              listaErrores += "<li>Ingresa un télefono válido (número de teléfono a 10 digitos)</li>";
-            }
+            // if ( ! validarTelefono(telefonoFormulario) ) {
+            //   listaErrores += "<li>Ingresa un télefono válido (número de teléfono a 10 digitos)</li>";
+            // }
 
             if ( ! validarAsunto(asuntoFormulario) ) {
               listaErrores += "<li>Ingresa un asunto válido (mínimo 5 caracteres y máximo 1000) </li>";
@@ -124,7 +124,7 @@ botonEnviar.addEventListener("click", (event) => {
       document.getElementById("correoElectronico").value = "";
       document.getElementById("mensaje").value = "";
       document.getElementById("nombre").value = "";
-      document.getElementById("telefono").value = "";
+      // document.getElementById("telefono").value = "";
       document.getElementById("asunto").value = "";
       
       botonEnviar.disabled = true;
