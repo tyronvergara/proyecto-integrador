@@ -76,8 +76,9 @@ botonEnviar.addEventListener("click", (event) => {
 
     // Validaciones...
 
-    if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario) && 
-          validarTelefono(telefonoFormulario) && validarAsunto(asuntoFormulario) && 
+    if ( !  (validarEmail(correoFormulario) && validarNombre(nombreFormulario)  
+          //validarTelefono(telefonoFormulario) 
+          && validarAsunto(asuntoFormulario) && 
           validarMensaje(mensajeFormulario) ) ) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
@@ -124,12 +125,12 @@ botonEnviar.addEventListener("click", (event) => {
       document.getElementById("correoElectronico").value = "";
       document.getElementById("mensaje").value = "";
       document.getElementById("nombre").value = "";
-      // document.getElementById("telefono").value = "";
+     // document.getElementById("telefono").value = "";
       document.getElementById("asunto").value = "";
       
       botonEnviar.disabled = true;
 
-      window.scrollTo(0, 0);
+      //window.scrollTo(0, 0);
     }
     
   }
