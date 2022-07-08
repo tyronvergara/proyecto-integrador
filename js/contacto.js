@@ -114,12 +114,13 @@ botonEnviar.addEventListener("click", (event) => {
       textoAlerta.innerHTML = "¡Su mensaje ha sido enviado correctamente!"
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
+      window.location.assign("mailto:outshoes-ch13@outlook.com?Subject=" + encodeURIComponent(asuntoFormulario) + "&body=" + encodeURIComponent(mensajeFormulario));
 
 
-      Email.send(datosEmail).then(
-        message =>  cajaAlerta.style.display="block"
+    //   Email.send(datosEmail).then(
+    //     message =>  cajaAlerta.style.display="block"
 
-    );
+    // );
 
     // Regresando el formulario a datos en blanco
       document.getElementById("correoElectronico").value = "";
