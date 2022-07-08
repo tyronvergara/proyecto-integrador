@@ -30,16 +30,8 @@ function validarNombre(nombre){
     if (direccion.match(direccionValida)){
      return true;
     }
-
     return false;
   } //validarEmail
-
-  function validarTelefono(telefono){
-    if (isNaN(telefono) || telefono.length < 10 || telefono.length > 10) {
-      return false;
-    }
-    return true;
-  } //validarTelefono
 
   function validarPassword(password){
     let passwordValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -67,7 +59,6 @@ botonEnviar.addEventListener("click", (event) => {
     let apellidomFormulario = document.getElementById("registroApellidom").value;
     let apellidopFormulario = document.getElementById("registroApellidop").value;
     let correoFormulario = document.getElementById("registroCorreoElectronico").value;
-    let telefonoFormulario = document.getElementById("registroTelefono").value;
     let passwordFormulario = document.getElementById('registroPassword').value;
     let confirmPasswordFormulario = document.getElementById('confirmContraseña').value;
 
@@ -77,7 +68,7 @@ botonEnviar.addEventListener("click", (event) => {
     // Validaciones...
 
     if ( !(validarNombre(nombreFormulario) && validarApellidom(apellidomFormulario) && 
-    validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
+    validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && 
     validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario))) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
@@ -98,10 +89,6 @@ botonEnviar.addEventListener("click", (event) => {
 
             if ( ! validarEmail(correoFormulario) ) {
               listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
-            }
-
-            if ( ! validarTelefono(telefonoFormulario) ) {
-              listaErrores += "<li>Ingresa un teléfono válido (número de teléfono a 10 digitos)</li>";
             }
 
             if ( ! validarPassword(passwordFormulario) ) {
@@ -125,15 +112,13 @@ console.log(listaErrores)
       let apellidomFormulario = document.getElementById("registroApellidom").value;
       let apellidopFormulario = document.getElementById("registroApellidop").value;
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
-      let telefonoFormulario = document.getElementById("registroTelefono").value;
       let passwordFormulario = document.getElementById('registroPassword').value;
 
       let usuarioRegistrado = {"nombre": nombreFormulario,
-                              "apellido materno": apellidomFormulario,
-                              "apellido paterno": apellidopFormulario,
+                              "apellidom": apellidomFormulario,
+                              "apellidop": apellidopFormulario,
                               "correo": correoFormulario,
-                              "telefono": telefonoFormulario,
-                              "password": passwordFormulario};
+                              "contrasena": passwordFormulario};
 
       localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
 
@@ -153,12 +138,9 @@ console.log(listaErrores)
       document.getElementById("registroApellidom").value = "";  
       document.getElementById("registroApellidop").value = "";  
       document.getElementById("registroCorreoElectronico").value = "";
-      document.getElementById("registroTelefono").value = "";
       document.getElementById("registroPassword").value = "";
       document.getElementById("confirmContraseña").value = "";
 
-
-      window.scrollTo(0, 0);
     }
     
   }
