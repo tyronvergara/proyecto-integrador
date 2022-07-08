@@ -58,26 +58,6 @@ function validarNombre(nombre){
     } return false; 
     }//confirmPasswords
 
-    function validarEdad(edad) {
-      let conversion = hoy.split('-')
-      let year = parseInt(conversion[0], 10);
-      let mes = parseInt(conversion[1], 10);
-      mes -= 1;
-      let dia = parseInt(conversion[2], 10);
-      let hoy = new Date(year, mes, dia)
-      let fechaNac = new Date(edad)
-      let edad1 = hoy.getFullYear() - fechaNac.getFullYear()
-      let mesesdif = hoy.getMonth() - fechaNac.getMonth()
-      if (
-        mesesdif < 0 ||
-        (mesesdif === 0 && hoy.getDate() < fechaNac.getDate())
-      ) {
-        edad1--
-        return true 
-      }
-      return false
-    }
-
   
 botonEnviar.addEventListener("click", (event) => {
     
@@ -90,9 +70,7 @@ botonEnviar.addEventListener("click", (event) => {
     let telefonoFormulario = document.getElementById("registroTelefono").value;
     let passwordFormulario = document.getElementById('registroPassword').value;
     let confirmPasswordFormulario = document.getElementById('confirmContraseña').value;
-    let edadFormulario = document.getElementById("registroEdad").value;
-    console.log(edadFormulario);
-  
+
    
     let listaErrores = "";
     
@@ -100,8 +78,7 @@ botonEnviar.addEventListener("click", (event) => {
 
     if ( !(validarNombre(nombreFormulario) && validarApellidom(apellidomFormulario) && 
     validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
-    validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) &&
-    validarEdad(edadFormulario))) {
+    validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario))) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
             cajaAlerta.style.display="block";
@@ -134,11 +111,7 @@ botonEnviar.addEventListener("click", (event) => {
             if ( ! validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) ) {
               listaErrores += "<li>Las contraseñas no coinciden</li>";
             }
-            if ( ! validarEdad(edadFormulario) ) {
-              listaErrores += "<li>Favor de ingresar una fecha de nacimiento válida</li>";
-            }
-
-
+            
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
 
@@ -154,14 +127,12 @@ console.log(listaErrores)
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
       let telefonoFormulario = document.getElementById("registroTelefono").value;
       let passwordFormulario = document.getElementById('registroPassword').value;
-      let edadFormulario = document.getElementById("registroEdad").value;
 
       let usuarioRegistrado = {"nombre": nombreFormulario,
                               "apellido materno": apellidomFormulario,
                               "apellido paterno": apellidopFormulario,
                               "correo": correoFormulario,
                               "telefono": telefonoFormulario,
-                              "edad": edadFormulario,
                               "password": passwordFormulario};
 
       localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
@@ -185,7 +156,6 @@ console.log(listaErrores)
       document.getElementById("registroTelefono").value = "";
       document.getElementById("registroPassword").value = "";
       document.getElementById("confirmContraseña").value = "";
-      document.getElementById("registroEdad").value = ""; 
 
 
       window.scrollTo(0, 0);
