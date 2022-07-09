@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="shortcut icon" href="../img/OUTSHOES (3).png">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,28 +17,22 @@
 
   <header id="header"> </header>
 
-  <div class="jumbotron jumbotron-fluid text-white font-weight-bolder shadow jumbotron-image" style="background-image: url(./img/carousel/carousel-registro.jpg);">
+  
+  <div class="jumbotron jumbotron-fluid text-white font-weight-bolder shadow jumbotron-image" style="background-image: url(../img/carousel/carousel-registro.jpg);">
     <div class="container p-5">
       <div class="row row-cols-1 justify-content-center">
         <div class="col text-center">
-          <h2 style="text-shadow: 3px 3px 3px black;" >Bienvenido a OutShoes</h2>
+          <h2 style="text-shadow: 3px 3px 3px black;" > Regístrate </h2>
         </div>
         <div class="col text-center">
-          <p style="text-shadow: 1px 1px 1px black;">Las mejores ofertas en calzado al alcance de un clic</p>
+          <p style="text-shadow: 1px 1px 1px black;"> Crea tu cuenta en Outshoes y disfruta de grandes descuentos. </p>
         </div>
       </div>
     </div>
   </div>
 
+
   <div class="container">
-
-    <div class="row justify-content-center">
-
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-3 mb-3">
-
-        <h1 class="registro" style="text-align: center; color: #D72323;"> Regístrate </h1>
-        <h6 class="registro" style="text-align: center;"> Crea tu cuenta en Outshoes y disfruta de grandes descuentos.</h6>
-
         <div class="row justify-content-center mt-3">
           <div id="alerta-caja" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
             <strong id="alerta-texto"> ... </strong>
@@ -53,8 +48,12 @@
   </div>
 
   <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-5 pt-5 pb-5 pr-5">
+    <div class="row align-items-center">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mr-5" >
+        <img src="../img/imagenRegistro.jpg" class="img-fluid rounded" alt="Imagen Registro" />
+    </div>
+
+    <div class="card col-lg-5 col-md-5 col-sm-12 col-xs-12 mt-5 pt-2" >
           <form method="post">
               <div class="form-group">
               <label for="registroNombre"> Nombre(s):</label>
@@ -78,10 +77,6 @@
                 <input required type="email" class="form-control" id="registroCorreoElectronico" placeholder="" value="">
             </div>
               <div class="form-group">
-                <label for="registroTelefono">Teléfono:</label>
-                <input required type="tel" class="form-control" id="registroTelefono" placeholder="" value="">
-            </div>
-              <div class="form-group">
                 <label for="registroPassword">Contraseña:</label>
                 <input required type="password" class="form-control" id="registroPassword" placeholder="" value=""
                   minlength="6" maxlength="20">
@@ -91,24 +86,16 @@
                 <input required type="password" class="form-control" id="confirmContraseña" placeholder="" value=""
                   minlength="6" maxlength="20">
             </div>
-              <div class="form-group">
-                <label for="registroEdad">Fecha de nacimiento:</label>
-                <input required type="date" class="form-control" id="registroEdad" placeholder="" value="">
-            </div>
             
-              <button type="button" id="botonEnviar" class="btn btn-secondary btn-block mt-5">Registrarse</button>
-              <div class="crearCuenta mt-2 mb-3">
-                <p><small>Al crear una cuenta, aceptas la <u>Política de privacidad </u> y los <u>Términos de uso</u> de
-                  Outshoes.</small></p>
-                  <p><u>¿Ya tienes cuenta? <a href="../cuenta/ingreso.html">Inicia Sesión</a></u></p>
+            
+              <button type="button" id="botonEnviar" class="btn btn-secondary btn-block mt-5 mb-4">Registrarse</button>
+              
+                  <p style="text-align: center;"><u>¿Ya tienes cuenta? <a href="./ingreso.html">Inicia Sesión</a></u></p>
                 </div>
             </form>
           </div>
-           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5 mb-5 pt-5 pb-5 pl-5">
-              <img src="../img/imagenRegistro.jpg" class="img-fluid rounded" alt="Imagen Registro" />
           </div>
-        </div>
-      </div>
+           
 
 
     <hr class="mt-5 mb-5">

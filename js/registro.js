@@ -30,16 +30,8 @@ function validarNombre(nombre){
     if (direccion.match(direccionValida)){
      return true;
     }
-
     return false;
   } //validarEmail
-
-  function validarTelefono(telefono){
-    if (isNaN(telefono) || telefono.length < 10 || telefono.length > 10) {
-      return false;
-    }
-    return true;
-  } //validarTelefono
 
   function validarPassword(password){
     let passwordValida = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -58,16 +50,6 @@ function validarNombre(nombre){
     } return false; 
     }//confirmPasswords
 
-    function validarEdad(edad){
-      if (isNaN(edad) || edad <= 18 || edad >= 80 ) {
-        return false;
-      }
-      return true;
-    } //validarEdad
-
- 
-
- 
   
 botonEnviar.addEventListener("click", (event) => {
     
@@ -77,20 +59,17 @@ botonEnviar.addEventListener("click", (event) => {
     let apellidomFormulario = document.getElementById("registroApellidom").value;
     let apellidopFormulario = document.getElementById("registroApellidop").value;
     let correoFormulario = document.getElementById("registroCorreoElectronico").value;
-    let telefonoFormulario = document.getElementById("registroTelefono").value;
     let passwordFormulario = document.getElementById('registroPassword').value;
     let confirmPasswordFormulario = document.getElementById('confirmContraseña').value;
-    let edadFormulario = document.getElementById("registroEdad").value;
-  
+
    
     let listaErrores = "";
     
     // Validaciones...
 
     if ( !(validarNombre(nombreFormulario) && validarApellidom(apellidomFormulario) && 
-    validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && validarTelefono(telefonoFormulario) && 
-    validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) &&
-    validarEdad(edadFormulario))) {
+    validarApellidop(apellidopFormulario) && validarEmail(correoFormulario) && 
+    validarPassword(passwordFormulario) && validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario))) {
       
             cajaAlerta.className = "alert alert-danger alert-dismissible fade show"
             cajaAlerta.style.display="block";
@@ -112,10 +91,6 @@ botonEnviar.addEventListener("click", (event) => {
               listaErrores += "<li>Ingresa un correo válido (Ejemplo: usuario@proveedor.com)</li>";
             }
 
-            if ( ! validarTelefono(telefonoFormulario) ) {
-              listaErrores += "<li>Ingresa un teléfono válido (número de teléfono a 10 digitos)</li>";
-            }
-
             if ( ! validarPassword(passwordFormulario) ) {
               listaErrores += "<li>Ingresa una contraseña válida (mínimo 6 caracteres y máximo 20) </li>";
             }
@@ -123,11 +98,7 @@ botonEnviar.addEventListener("click", (event) => {
             if ( ! validarConfirmPasswords(confirmPasswordFormulario, passwordFormulario) ) {
               listaErrores += "<li>Las contraseñas no coinciden</li>";
             }
-            if ( ! validarEdad(edadFormulario) ) {
-              listaErrores += "<li>Favor de ingresar una edad válida(solo mayores de edad 18+)</li>";
-            }
-
-
+            
 
             textoAlerta.innerHTML = "Se encontraron los siguientes problemas: "
 
@@ -141,23 +112,19 @@ console.log(listaErrores)
       let apellidomFormulario = document.getElementById("registroApellidom").value;
       let apellidopFormulario = document.getElementById("registroApellidop").value;
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
-      let telefonoFormulario = document.getElementById("registroTelefono").value;
       let passwordFormulario = document.getElementById('registroPassword').value;
-      let edadFormulario = document.getElementById("registroEdad").value;
 
       let usuarioRegistrado = {"nombre": nombreFormulario,
-                              "apellido materno": apellidomFormulario,
-                              "apellido paterno": apellidopFormulario,
+                              "apellidom": apellidomFormulario,
+                              "apellidop": apellidopFormulario,
                               "correo": correoFormulario,
-                              "telefono": telefonoFormulario,
-                              "edad": edadFormulario,
-                              "password": passwordFormulario};
+                              "contrasena": passwordFormulario};
 
       localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
 
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
-      textoAlerta.innerHTML = "¡Registro Exitoso!"
+      textoAlerta.innerHTML = "¡Regístro Exitoso!"
       cajaAlerta.style.display = "block";
 
       botonEnviar.disabled = true;
@@ -171,17 +138,9 @@ console.log(listaErrores)
       document.getElementById("registroApellidom").value = "";  
       document.getElementById("registroApellidop").value = "";  
       document.getElementById("registroCorreoElectronico").value = "";
-      document.getElementById("registroTelefono").value = "";
       document.getElementById("registroPassword").value = "";
       document.getElementById("confirmContraseña").value = "";
-      document.getElementById("registroEdad").value = "";
-      
-      
-  
-    
 
-
-      window.scrollTo(0, 0);
     }
     
   }
