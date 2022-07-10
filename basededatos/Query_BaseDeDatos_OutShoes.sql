@@ -135,8 +135,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Estado` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`id`))
+  `cantidad` INT NOT NULL DEFAULT 0,
+  `Inventario_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_Inventario_id_idx` (`Inventario_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Inventario_id`
+    FOREIGN KEY (`Inventario_id`)
+    REFERENCES `outshoes`.`Inventario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
