@@ -94,6 +94,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+<<<<<<< HEAD
 -- Table `outshoes`.`Producto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Producto` (
@@ -139,10 +140,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+=======
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
 -- Table `outshoes`.`Inventario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   `id` INT NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `Producto_id` INT NOT NULL,
   `Talla_id` INT NOT NULL,
   PRIMARY KEY (`id`, `Producto_id`, `Talla_id`),
@@ -154,6 +158,14 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Talla_id`
     FOREIGN KEY (`Talla_id`)
+=======
+  `talla` INT NULL,
+  `cantidad` INT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_talla_idx` (`talla` ASC) VISIBLE,
+  CONSTRAINT `fk_talla`
+    FOREIGN KEY (`talla`)
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
     REFERENCES `outshoes`.`Talla` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -161,9 +173,57 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+<<<<<<< HEAD
 -- Table `outshoes`.`Existencia`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Existencia` (
+=======
+-- Table `outshoes`.`Producto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `outshoes`.`Producto` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sku` VARCHAR(8) NOT NULL,
+  `nombre` VARCHAR(255) NULL,
+  `descripcion` VARCHAR(610) NULL,
+  `imagen` VARCHAR(255) NULL,
+  `precio` DECIMAL(6,2) NOT NULL,
+  `Categoria_id` INT NOT NULL,
+  `Coleccion_id` INT NOT NULL,
+  `Marca_id` INT NOT NULL,
+  `Inventario_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `Categoria_id`, `Coleccion_id`, `Marca_id`, `Inventario_id`),
+  INDEX `fk_Producto_Categoria1_idx` (`Categoria_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Coleccion1_idx` (`Coleccion_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Marca1_idx` (`Marca_id` ASC) VISIBLE,
+  INDEX `fk_Producto_Inventario1_idx` (`Inventario_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Producto_Categoria1`
+    FOREIGN KEY (`Categoria_id`)
+    REFERENCES `outshoes`.`Categoria` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Coleccion1`
+    FOREIGN KEY (`Coleccion_id`)
+    REFERENCES `outshoes`.`Coleccion` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Marca1`
+    FOREIGN KEY (`Marca_id`)
+    REFERENCES `outshoes`.`Marca` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Producto_Inventario1`
+    FOREIGN KEY (`Inventario_id`)
+    REFERENCES `outshoes`.`Inventario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `outshoes`.`Estado`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `outshoes`.`Estado` (
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
   `id` INT NOT NULL AUTO_INCREMENT,
   `Inventario_id` INT NOT NULL,
   `cantidad` INT NOT NULL DEFAULT 0,
@@ -182,6 +242,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Pedido` (
   `id` INT NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `estado` INT NOT NULL,
   `usuario` INT NOT NULL,
   `Inventario_id` INT NOT NULL,
@@ -190,20 +251,41 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Pedido` (
   INDEX `fk_estado_idx` (`estado` ASC) VISIBLE,
   INDEX `fk_usuario_idx` (`usuario` ASC) VISIBLE,
   INDEX `fk_Pedido_Inventario1_idx` (`Inventario_id` ASC) VISIBLE,
+=======
+  `cantidad` INT NOT NULL,
+  `producto` INT NOT NULL,
+  `estado` INT NOT NULL,
+  `usuario` INT NOT NULL,
+  PRIMARY KEY (`id`, `estado`, `producto`, `usuario`),
+  INDEX `fk_Pedido_Estado1_idx` (`estado` ASC) VISIBLE,
+  INDEX `fk_producto_idx` (`producto` ASC) VISIBLE,
+  INDEX `fk_usuario_idx` (`usuario` ASC) VISIBLE,
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
   CONSTRAINT `fk_estado`
     FOREIGN KEY (`estado`)
     REFERENCES `outshoes`.`Estado` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
+<<<<<<< HEAD
+=======
+  CONSTRAINT `fk_producto`
+    FOREIGN KEY (`producto`)
+    REFERENCES `outshoes`.`Producto` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
   CONSTRAINT `fk_usuario`
     FOREIGN KEY (`usuario`)
     REFERENCES `outshoes`.`Usuario` (`id`)
     ON DELETE NO ACTION
+<<<<<<< HEAD
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pedido_Inventario1`
     FOREIGN KEY (`Inventario_id`)
     REFERENCES `outshoes`.`Inventario` (`id`)
     ON DELETE NO ACTION
+=======
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 

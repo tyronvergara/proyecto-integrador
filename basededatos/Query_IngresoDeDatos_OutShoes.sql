@@ -97,6 +97,7 @@ INSERT INTO `talla` (numero) VALUES ('28');
 INSERT INTO `talla` (numero) VALUES ('28.5');
 INSERT INTO `talla` (numero) VALUES ('29');
 INSERT INTO `talla` (numero) VALUES ('29.5');
+<<<<<<< HEAD
 INSERT INTO `talla` (numero) VALUES ('30');
 
 -- Usuarios
@@ -490,3 +491,6 @@ INSERT INTO `existencia` (Inventario_id, cantidad) VALUES (22, 1);
 -- INSERT INTO `existencia` (Inventario_id, cantidad) VALUES (25, 6);
 -- INSERT INTO `existencia` (Inventario_id, cantidad) VALUES (25, 2);
 -- INSERT INTO `existencia` (Inventario_id, cantidad) VALUES (25, 9);
+=======
+INSERT INTO `talla` (numero) VALUES ('30');
+>>>>>>> d6081a0 (fix: Se arreglaron tablas y relaciones)
