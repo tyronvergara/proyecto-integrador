@@ -165,8 +165,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Existencia` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `cantidad` INT NOT NULL DEFAULT 0,
   `Inventario_id` INT NOT NULL,
+  `cantidad` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_Inventario_id_idx` (`Inventario_id` ASC) VISIBLE,
   CONSTRAINT `fk_Inventario_id`
