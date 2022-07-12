@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" href="../img/OUTSHOES (3).png">
+    <link rel="shortcut icon" href="../img/favicon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,14 +13,14 @@
   <body>
     <header id="header"> </header>
 
-    <div class="jumbotron jumbotron-fluid text-white font-weight-bolder shadow jumbotron-image" style="background-image: url(./img/carousel/carousel-ingreso.jpg);">
+    <div class="jumbotron jumbotron-fluid text-white font-weight-bolder shadow jumbotron-image" style="background-image: url(../img/carousel/carousel-inicio.jpg);">
       <div class="container p-5">
         <div class="row row-cols-1 justify-content-center">
           <div class="col text-center">
-            <h2 style="text-shadow: 3px 3px 3px black;" >Bienvenido a OutShoes</h2>
+            <h2 style="text-shadow: 3px 3px 3px black;" >Inicio de sesión</h2>
           </div>
           <div class="col text-center">
-            <p style="text-shadow: 1px 1px 1px black;">Las mejores ofertas en calzado al alcance de un clic</p>
+            <p style="text-shadow: 1px 1px 1px black;">Inicia sesión para obtener las mejores ofertas</p>
           </div>
         </div>
       </div>
@@ -43,12 +43,27 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row align-items-center ">
+    <div class="container ">
+      <div class="row align-items-center text-center ">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-5 mb-5 pt-5 pb-5 pl-5">
-          <a href="../cuenta/registro.html" >
+      <div class="jumbotron"  style="background-image: url(../img/ingreso.jpg); width: 450px; height: 600px;">
+      <div class="row d-flex align-items-center row-cols-1 ">
+        <div class="col">        
+           <h1 class="display text-center  "  style="color: beige; text-shadow: 3px 3px 3px black;">Regístrate</h1>
+        </div>
+        <div class="col">
+           <p class="lead text-center align-middle"  style="color: beige; text-shadow: 3px 3px 3px black;">No tienes cuenta, regístrate aquí</p>
+      </div>
+        <hr class="my-4">
+        <div class="col text-center">
+        <a class="btn btn-primary btn-lg" href="/cuenta/registro.html" role="button">Regístrate</a>
+      </div>
+        </div>
+      </div>   
+      
+      <!-- <a href="../cuenta/registro.html" >
             <img src="../img/imagenInicioSesion.png" class="img-fluid rounded" weight="600px" height="800px" alt="Imagen Inicio de Sesión">
-          </a>
+          </a> -->
     </div>
 
  
@@ -65,18 +80,11 @@
               <label for="exampleInputPassword1">Contraseña:</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-             
-              <small  class="text-muted">Mantener sesión abierta</small> 
-            </div>
-            <div class="form-group">
-              <small class="text-muted">¿Olvidaste tu Contraseña?</small>
-            </div>
+           
             
             <button type="submit" id="botonEnviar" class="btn btn-secondary btn-block mt-3">Iniciar sesión</button>
             
-            <small class="text-muted"> </p> Al iniciar sesión, aceptas la Política de privacidad y los Términos de uso de OutShoes.</p></small>
+          
           </form>
         </p>
       
