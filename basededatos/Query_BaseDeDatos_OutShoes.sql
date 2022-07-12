@@ -129,16 +129,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `outshoes`.`Estado`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`Estado` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `outshoes`.`Inventario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
@@ -167,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Existencia` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Inventario_id` INT NOT NULL,
   `cantidad` INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`, `Inventario_id`),
   INDEX `fk_Inventario_id_idx` (`Inventario_id` ASC) VISIBLE,
   CONSTRAINT `fk_Inventario_id`
     FOREIGN KEY (`Inventario_id`)
@@ -182,19 +172,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `outshoes`.`Pedido` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `estado` INT NOT NULL,
   `usuario` INT NOT NULL,
   `Inventario_id` INT NOT NULL,
   `cantidad` INT NOT NULL,
-  PRIMARY KEY (`id`, `Inventario_id`),
-  INDEX `fk_estado_idx` (`estado` ASC) VISIBLE,
+  PRIMARY KEY (`id`, `Inventario_id`, `usuario`),
   INDEX `fk_usuario_idx` (`usuario` ASC) VISIBLE,
   INDEX `fk_Pedido_Inventario1_idx` (`Inventario_id` ASC) VISIBLE,
-  CONSTRAINT `fk_estado`
-    FOREIGN KEY (`estado`)
-    REFERENCES `outshoes`.`Estado` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_usuario`
     FOREIGN KEY (`usuario`)
     REFERENCES `outshoes`.`Usuario` (`id`)
