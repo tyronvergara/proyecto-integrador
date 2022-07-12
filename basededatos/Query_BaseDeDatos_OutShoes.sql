@@ -135,6 +135,7 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Producto_id` INT NOT NULL,
   `Talla_id` INT NOT NULL,
+  `cantidad` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`, `Producto_id`, `Talla_id`),
   INDEX `fk_Talla_id_idx` (`Talla_id` ASC) VISIBLE,
   CONSTRAINT `fk_Producto_id`
@@ -145,23 +146,6 @@ CREATE TABLE IF NOT EXISTS `outshoes`.`Inventario` (
   CONSTRAINT `fk_Talla_id`
     FOREIGN KEY (`Talla_id`)
     REFERENCES `outshoes`.`Talla` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `outshoes`.`Existencia`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `outshoes`.`Existencia` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `Inventario_id` INT NOT NULL,
-  `cantidad` INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`, `Inventario_id`),
-  INDEX `fk_Inventario_id_idx` (`Inventario_id` ASC) VISIBLE,
-  CONSTRAINT `fk_Inventario_id`
-    FOREIGN KEY (`Inventario_id`)
-    REFERENCES `outshoes`.`Inventario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
