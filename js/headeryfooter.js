@@ -107,15 +107,11 @@ function footer(){
     <h2 class="pb-3 text-center">Enlaces de interés</h2>
 
     <nav class="nav flex-column text-center">
-<<<<<<< HEAD
+
       <a class="nav-link links-faq" href="../preguntas-frecuentes.html">Preguntas frecuentes</a>
       <a class="nav-link links-faq" href="../contacto.html">Contacto</a>
       <a class="nav-link links-faq" href="./registro.html">Registro</a>
-=======
-      <a class="nav-link links-faq" href="./preguntas-frecuentes.html">Preguntas frecuentes</a>
-      <a class="nav-link links-faq" href="./contacto.html">Contacto</a>
-      <a class="nav-link links-faq" href="./cuenta/registro.html">Registro</a>
->>>>>>> c222cfa6f56a2f100fcbc7fed8c1da5149507670
+
     </nav>
 
   </div>
