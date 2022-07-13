@@ -30,19 +30,7 @@ function header(nav){
  
          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-sm-center text-xs-center">
-<<<<<<< HEAD
-             <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Inicio<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="./productos.html">Productos</a>
-         </li>
-            <li class="nav-item">
-               <a class="nav-link" href="./contacto.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./nosotros.html">Nosotros</a>
-=======
+
              <li class="nav-item ${inicio} " >
               <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
             </li> 
@@ -54,7 +42,7 @@ function header(nav){
             </li>
             <li class="nav-item ${nosotros}" >
               <a class="nav-link" href="../nosotros.html">Nosotros</a>
->>>>>>> gabriel
+
             </li>
           </ul>
  
