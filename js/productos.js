@@ -68,13 +68,6 @@ function agregaColeccion(coleccion) {
   colecciones.innerHTML += itemHTML;
 }
 
-
-let peticionProductos = fetch('http://localhost:8080/api/producto/pagina?pag=0&tam=333')
-                        .then(response => response.json()
-                        .then(data => data.forEach(element => {
-                            agregaProducto(element);
-                    })))
-
 let peticionCategorias = fetch('http://localhost:8080/api/categoria/todo/')
                         .then(response => response.json()
                         .then(data => data.forEach(element => {
@@ -99,17 +92,8 @@ let peticiconColeccion = fetch('http://localhost:8080/api/coleccion/todo/')
                     agregaColeccion(element);
             })))   
 
-
-
-
-// let peticion = fetch('http://localhost:8080/api/producto/todo')
-//                         .then(response => response.json()
-//                         .then(data => data.forEach(element => {
-//                             agregaProducto(element);
-//                     })))
-
-//JSON.parse(localStorage.getItem("productos") || "[]");
-
-// arregloProductos.forEach(element => {
-//         agregaProducto(element);
-// });
+let peticionProductos = fetch('http://localhost:8080/api/producto/pagina?pag=0&tam=333')
+                        .then(response => response.json()
+                        .then(data => data.forEach(element => {
+                            agregaProducto(element);
+                    })))
