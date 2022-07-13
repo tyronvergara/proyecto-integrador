@@ -1,4 +1,22 @@
-function header(){
+
+  if (window.location.pathname == `/index.html`) {
+    var inicio = "active"
+  }
+  if (window.location.pathname == `/productos.html`) {
+    var productos = "active"
+  }
+  if (window.location.pathname == `/contacto.html`) {
+    var contacto = "active"
+  }
+  if (window.location.pathname == `/nosotros.html`) {
+    var nosotros = "active"
+  }
+  ;
+
+function header(nav){
+  
+
+
     const headerHTML = 
      `
      <nav  class="navbar navbar-expand-md">
@@ -12,16 +30,16 @@ function header(){
  
          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-sm-center text-xs-center">
-             <li class="nav-item active">
+             <li class="nav-item ${inicio} " >
               <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="../productos.html">Productos</a>
+            </li> 
+            <li class="nav-item ${productos}  " >
+            <a class="nav-link " href="../productos.html">Productos</a>
          </li>
-            <li class="nav-item">
+            <li class="nav-item  ${contacto}" >
                <a class="nav-link" href="../contacto.html">Contacto</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ${nosotros}" >
               <a class="nav-link" href="../nosotros.html">Nosotros</a>
             </li>
           </ul>
@@ -115,3 +133,13 @@ function footer(){
 
 header();
 footer();
+
+
+// let nav1 =
+
+
+// function barra(){
+//   if (txtNombre.value.length <3){
+//       return false;
+//   } 
+//   return true;
