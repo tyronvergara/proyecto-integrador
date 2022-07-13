@@ -43,7 +43,8 @@ function agregarTarjeta(persona){
 
 let personas = [
     {"nombre": "Héctor Zamora", 
-    "imagen": "./img/nosotros/hector.jpeg",
+    "imagen": "./img/nosotros/hector.png",
+    "imagen2": "./img/nosotros/hector2.png",
     "carrera": "Ingeniería Civil",
     "linkedin": "https://www.linkedin.com/in/hazb/",
     "github": "https://github.com/hazb91",
