@@ -1,16 +1,20 @@
 function agregaProducto(producto){
     const itemHTML =    
-`    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-2">
-        <div class="card text-center h-100">
-            <img id="imgProducto" src="${producto.imagen}">
-            <div class="card-body">
-                    <h5 class="card-title"> ${producto.nombre} </h5>
-                    <!-- <p class="text-muted"> ${producto.descripcion} </p> -->
-                    <p class="text-muted"> ${producto.sku} </p>
-                    <p  class="card-text"> Precio: $ ${producto.precio} </p>
-            </div>
+    `
+    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 mb-2">
+      <div class="card text-center h-100">
+          <img id="imgProducto" src="${producto.imagen}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"> ${producto.nombre} </h5>
+          <p class="text-muted"> ${producto.sku} </p>
+          <div class="mt-auto">
+            <p class="card-text mt-auto"> Precio: $ ${producto.precio} </p>
+            <button type="button" class="btn btn-secondary mt-auto">Ver producto</button>
+          </div>
         </div>
-  </div>`
+      </div>
+    </div>
+  `
 
     const listaProductos = document.getElementById("listaProductos");
     listaProductos.innerHTML += itemHTML;
