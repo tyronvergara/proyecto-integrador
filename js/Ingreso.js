@@ -25,10 +25,6 @@ function validarPassword(password){
     return false;
   } //validarEmail
 
- 
-  
- 
-  
 botonEnviar.addEventListener("click", (event) => {
     
     event.preventDefault();
@@ -61,11 +57,37 @@ botonEnviar.addEventListener("click", (event) => {
       let correoFormulario = document.getElementById("exampleInputEmail1").value;
       let passwordFormulario = document.getElementById('exampleInputPassword1').value;
     
-      let usuarioInicioSesion = {
-                              "correo": correoFormulario,
-                              "password": passwordFormulario};
+      // let usuarioInicioSesion = {
+      //                             "correo": correoFormulario,
+      //                             "contrasena": passwordFormulario
+      //                           };
 
-      localStorage.setItem("usuario", JSON.stringify(usuarioInicioSesion));
+      fetch("http://localhost:8080/api/ingreso/", {
+          method: "post",
+            headers: {
+                'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+                  body: JSON.stringify({
+                        "correo": correoFormulario,
+                        "contrasena": passwordFormulario
+                  })
+              })
+        .then( (response) => { response.json()
+        .then( (data) => localStorage.setItem("autenticacion", data.accessToken))});
+
+          // let response = await fetch('http://localhost:8080/api/ingreso/', {
+          //   method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/json;charset=utf-8'
+          //         },
+          //           body: JSON.stringify(usuarioInicioSesion)
+          //           });
+
+          // let result = response.json();
+          // console.log(result.message);
+
+      //localStorage.setItem("usuario", JSON.stringify(usuarioInicioSesion));
 
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
@@ -74,9 +96,9 @@ botonEnviar.addEventListener("click", (event) => {
 
       botonEnviar.disabled = true;
 
-      window.setTimeout(function() {
-        window.location.href = "../index.html";;
-    }, 3000);
+       window.setTimeout(function() {
+         window.location.href = "../index.html";;
+     }, 3000);
     
 
   
