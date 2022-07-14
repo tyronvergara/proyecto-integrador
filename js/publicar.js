@@ -1,3 +1,7 @@
+var arregloCategorias = []
+let arregloMarcas = []
+let arregloColecciones = []
+
 let botonEnviar = document.getElementById("botonEnviar");
 let cajaAlerta = document.getElementById("alerta-caja");
 let listaAlerta = document.getElementById("alerta-lista");
@@ -7,14 +11,29 @@ let fileImage = document.getElementById('fileImage');
 let btnFake = document.getElementById('btnFake');
 let imageFile = document.getElementById('imageFile');
 
-let imagenProducto  = "";
+let imagenRuta = "";
 
-let producto = {
-  "nombre": "",
-  "descripcion": "",
-  "precio": 0,
-  "imagen": ""
-}
+let dropCategorias = document.getElementById("drop-categorias");
+let dropMarcas = document.getElementById("drop-marcas");
+let dropColecciones = document.getElementById("drop-colecciones");
+
+let peticionCategorias = fetch('http://localhost:8080/api/categoria/todo/')
+                        .then(response => response.json()
+                        .then(data => data.forEach(element => {
+                          dropCategorias.innerHTML += `<option value=${element.id}> ${element.nombre} </option>`
+                    })))
+
+let peticionMarca = fetch('http://localhost:8080/api/marca/todo/')
+                        .then(response => response.json()
+                        .then(data => data.forEach(element => {
+                          dropMarcas.innerHTML += `<option value=${element.id}> ${element.nombre} </option>`
+                    })))    
+                
+let peticionColeccion = fetch('http://localhost:8080/api/coleccion/todo/')
+                .then(response => response.json()
+                .then(data => data.forEach(element => {
+                  dropColecciones.innerHTML += `<option value=${element.id}> ${element.nombre} </option>`
+            })))
 
 
 btnFake.addEventListener('click', function(){
@@ -28,12 +47,13 @@ btnFake.addEventListener('click', function(){
     
     let preview = document.getElementById(img);
     let file    = document.getElementById(inputFile).files[0];
+    imagenRuta = document.getElementById(inputFile).files[0].name;
+
     let reader  = new FileReader();
 
     reader.addEventListener("load", function () {
         preview.style.display="block";
         preview.src = reader.result;
-        imagenProducto = reader.result;
       }, false);
     
       if (file) {
@@ -74,9 +94,13 @@ botonEnviar.addEventListener("click", (event) => {
     
     event.preventDefault();
 
+    let skuProducto = document.getElementById("sku").value;
     let nombreProducto = document.getElementById("nombre").value;
     let descripcionProducto = document.getElementById("descripcion").value;
     let precioProducto = document.getElementById("precio").value;
+    let imagenProducto = "./img/item/";
+    imagenProducto += imagenRuta;
+
     let listaErrores = "";
 
     // Validaciones...
@@ -110,24 +134,40 @@ botonEnviar.addEventListener("click", (event) => {
       cajaAlerta.className = "alert alert-success alert-dismissible fade show";
       cajaAlerta.style.display="block";
 
-      producto.nombre = nombreProducto;
-      producto.descripcion = descripcionProducto;
-      producto.precio =  precioProducto;
-      producto.imagen = imagenProducto;
-      
-      if (localStorage.getItem("productos")) {
-          let arregloProductos = JSON.parse(localStorage.getItem("productos") || "[]");
-          arregloProductos.push(producto)
-          localStorage.setItem("productos", JSON.stringify(arregloProductos));
-
-      } else {
-          let arreglo = [];
-          arreglo.push(producto);
-          localStorage.setItem("productos", JSON.stringify(arreglo));
+      let productoAgregado = {
+        "sku": skuProducto,
+        "nombre": nombreProducto,
+        "descripcion": descripcionProducto,
+        "imagen": imagenProducto,
+        "precio": precioProducto,
+        "categoria": {
+          "id": dropCategorias.value
+        },
+        "coleccion": {
+          "id": dropColecciones.value
+        },
+        "marca": {
+          "id": dropMarcas.value
+        },
       }
-    
-      
-      // Regresando el formulario a datos en blanco
+
+      var idProducto;
+
+      fetch("http://localhost:8080/api/producto/agregar/", {
+        method: "post",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer: ' + localStorage.getItem("autenticacion"),
+        },
+          body: JSON.stringify(productoAgregado)
+      })
+      .then( (response) => { response.json()
+      .then ( (element) => { idProducto = element.id  } )
+      });
+
+      console.log(idProducto);
+
       document.getElementById("nombre").value = "";
       document.getElementById("descripcion").value = "";
       document.getElementById("precio").value = "";
