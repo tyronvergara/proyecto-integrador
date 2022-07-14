@@ -113,6 +113,90 @@
       </div>
     </div>
 
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span> 
+            </button>
+          </div>
+
+          <div class="modal-body">              
+            <div class="container">
+
+              <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                  <div class="card">
+                    <div class="card-body">
+                        <div>  
+                          <img id="imagen-modal" class="img-fluid" src="./img/item/1.webp">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                      <div class="card-body"> 
+                        <div class="text-center">
+                          <div>
+                            <h3 id="titulo-modal" class="m-2">  </h3>    
+                          </div> 
+                          <div class="card mt-3">
+                            <div class="card-body"> 
+                              <div class="text-justify">
+                            <div>
+                            <h4 id="precio-modal" class="text-center">  </h4>
+                          </div>  
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+              </div> 
+            
+                    <div class="card mt-3">
+                      <div class="card-body"> 
+                        <div class="text-center">
+                        <h5 class="card-title">Elige tu talla</h5>
+                            <div type="button" class="btn btn-light" class="p-2">16</div>
+                          </div>
+                      </div>
+                    </div> 
+
+                  <div class="text-center">
+                    <div class="card mt-3">
+                      <div class="card-body"> 
+                        <h5 class="card-title">Cantidad:</h5>
+                        <form class="m-3">
+                          <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
+                        </form>               
+                        <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                      </div>
+                    </div>                                                    
+                  </div>
+                </div>
+              </div>
+                
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card mt-3">
+                        <div class="card-body">
+                          <h4>Descripción</h4>
+                            <p text id="descripcion-modal"  class="text-align"></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>          
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>  
+
+
     <!-- A partir de aquí se deja de modificar el cuerpo de la página -->
 
   </div>
@@ -128,7 +212,32 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
+
+    $(function () {
+      $('#Modal').on('show.bs.modal', function (e) {
+        let button = $(e.relatedTarget)
+        let producto = button.data('producto')
+
+
+        let productoSeleccionado = fetch('http://localhost:8080/api/producto/' + producto.toString())
+                        .then(response => response.json()
+                        .then(data => {
+                            document.getElementById("imagen-modal").src = data.imagen;
+                            document.getElementById("descripcion-modal").innerHTML = data.descripcion;
+                            document.getElementById("titulo-modal").innerHTML = data.nombre;
+                            document.getElementById("precio-modal").innerHTML = data.precio;
+                        }))
+          
+                    
+        
+          })
+      }
+    )
   </script>
   
 </body>
 </html>
+
+() => {
+
+}
