@@ -42,19 +42,13 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Producto</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Total</th>
             </tr>
           </thead>
           <tbody id="productos-carrito">
-            <tr>
-              <th scope="row">1</th>
-              <td>Producto</td>
-              <td>1</td>
-              <td>$0.00</td>
-            </tr>
+
           </tbody>
         </table>
       </div>
@@ -68,7 +62,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <span class="float-left"> Subtotal</span>
-              <span class="float-right">$0.00</span>
+              <span id="precio-carrito" class="float-right">$</span>
             </li>
             <li class="list-group-item">
               <span class="float-left"> Envío </span>
@@ -77,7 +71,7 @@
           </ul>
           <div class="card-body">
             <span class="float-left"><h4>Total:</h4></span>
-            <span class="float-right"><h4>$0.00</h4></span>
+            <span id="precio-carrito" class="float-right"><h4>$</h4></span>
           </div>
           <div class="card-body">
             <button type="button" class="btn btn-secondary btn-lg btn-block">Comprar</button>

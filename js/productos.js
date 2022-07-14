@@ -79,7 +79,7 @@ let peticionColeccion = fetch('http://localhost:8080/api/coleccion/todo/')
                     agregaColeccion(element);
             })))   
 
-let peticionProductos = fetch('http://localhost:8080/api/producto/pagina?pag=0&tam=333')
+let peticionProductos = fetch('http://localhost:8080/api/producto/todo/desc')
                         .then(response => response.json()
                         .then(data => data.forEach(element => {
                             agregaProducto(element);
@@ -93,7 +93,7 @@ document.getElementById('btn-categoria').addEventListener('click', function() {
     const listaProductos = document.getElementById("listaProductos");
     listaProductos.innerHTML = "";
 
-    let peticionProductos = fetch('http://localhost:8080/api/producto/pagina?pag=0&tam=333')
+    let peticionProductos = fetch('http://localhost:8080/api/producto/todo/desc')
     .then(response => response.json()
     .then(data => data.forEach(element => {
           console.log(element.categoria);

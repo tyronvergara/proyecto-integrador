@@ -1,10 +1,9 @@
-function agregaProducto(producto, id){
+function agregaProducto(producto){
     const itemHTML =    `<div class="col mb-4">
                                 <div class="card text-center h-100">
                                         <img id="imgProducto" src="${producto.imagen}">
                                         <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title"> ${producto.nombre} </h5>
-                                                <p class="text-muted">${producto.descripcion}</p>
                                                 <p  class="card-text"> Precio: $ ${producto.precio} </p>
                                                 <button type="button" class="btn btn-secondary mt-auto">Agregar al carrito</button>
                                         </div>
@@ -12,28 +11,11 @@ function agregaProducto(producto, id){
                         </div>`
 
     const listaProductos = document.getElementById("listaProductos");
-    const listaDeseados = document.getElementById("listaDeseados");
-    const listaVendidos = document.getElementById("listaVendidos");
-    // Agregar de forma temporal a "deseados" y "vendidos"
-
-        if(id == "listaProductos"){
                 listaProductos.innerHTML += itemHTML;
-        } else {
-                listaDeseados.innerHTML += itemHTML;
-                listaVendidos.innerHTML += itemHTML;
-        }
 }
 
-let arregloProductos = JSON.parse(localStorage.getItem("productos") || "[]");
-
-// arregloProductos.forEach(element => {
-//         agregaProducto(element);
-// });
-
-for (let index = 0; index < 3; index++) {
-        agregaProducto(arregloProductos[index], "listDeseados");
-}
-
-for (let index = arregloProductos.length - 1; index > arregloProductos.length - 4; index--) {
-        agregaProducto(arregloProductos[index], "listaProductos");
-}
+let peticionProductos = fetch('http://localhost:8080/api/producto/todo/desc')
+.then(response => response.json()
+.then(data => data.slice(-6).forEach(element => {
+      agregaProducto(element);
+})))
