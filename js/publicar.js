@@ -98,6 +98,7 @@ botonEnviar.addEventListener("click", (event) => {
     let nombreProducto = document.getElementById("nombre").value;
     let descripcionProducto = document.getElementById("descripcion").value;
     let precioProducto = document.getElementById("precio").value;
+    let tallaProducto = document.getElementById("talla").value;
     let imagenProducto = "./img/item/";
     imagenProducto += imagenRuta;
 
@@ -140,6 +141,7 @@ botonEnviar.addEventListener("click", (event) => {
         "descripcion": descripcionProducto,
         "imagen": imagenProducto,
         "precio": precioProducto,
+        "talla": tallaProducto,
         "categoria": {
           "id": dropCategorias.value
         },

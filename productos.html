@@ -149,6 +149,7 @@
                             <div class="card-body"> 
                               <div class="text-justify">
                             <div>
+                              <h4 class="text-center"> Precio del producto </h4>
                             <h4 id="precio-modal" class="text-center">  </h4>
                           </div>  
                         </div>
@@ -161,8 +162,8 @@
                     <div class="card mt-3">
                       <div class="card-body"> 
                         <div class="text-center">
-                        <h5 class="card-title">Elige tu talla</h5>
-                            <div type="button" class="btn btn-light" class="p-2">16</div>
+                        <h5 class="card-title">Talla disponible</h5>
+                            <div id="talla-modal" type="button" class="btn btn-light" class="p-2">16</div>
                           </div>
                       </div>
                     </div> 
@@ -172,9 +173,9 @@
                       <div class="card-body"> 
                         <h5 class="card-title">Cantidad:</h5>
                         <form class="m-3">
-                          <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
+                          <input id="cantidad-modal" type="number" id="quantity" name="quantity" min="1" max="10" value="1">
                         </form>               
-                        <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                        <button id="agregar-carrito" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Agregado a carrito">Agregar al carrito</button>
                       </div>
                     </div>                                                    
                   </div>
@@ -226,10 +227,36 @@
                             document.getElementById("imagen-modal").src = data.imagen;
                             document.getElementById("descripcion-modal").innerHTML = data.descripcion;
                             document.getElementById("titulo-modal").innerHTML = data.nombre;
-                            document.getElementById("precio-modal").innerHTML = data.precio;
+                            document.getElementById("precio-modal").innerHTML = "$ " + data.precio;
+                            document.getElementById("talla-modal").innerHTML = data.talla;
                         }))
           
-                    
+        document.getElementById('agregar-carrito').addEventListener('click', function() {
+          
+          let productoSeleccionado = fetch('http://localhost:8080/api/producto/' + producto.toString())
+                        .then(response => response.json()
+                        .then(data => {
+                          let idProducto = producto;
+                          let cantidad = document.getElementById("cantidad-modal").value;
+                          
+                          let carrito = {
+                            "id": idProducto,
+                            "cantidad": cantidad
+                          }
+
+                          if (localStorage.getItem("productos")) {
+                            let arregloProductos = JSON.parse(localStorage.getItem("productos") || "[]");
+                            arregloProductos.push(carrito)
+                            localStorage.setItem("productos", JSON.stringify(arregloProductos));
+
+                            } else {
+                              let arreglo = [];
+                              arreglo.push(carrito);
+                              localStorage.setItem("productos", JSON.stringify(arreglo));
+           }
+                        }))
+          }
+        );          
         
           })
       }

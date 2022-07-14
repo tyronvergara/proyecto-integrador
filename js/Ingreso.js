@@ -74,7 +74,11 @@ botonEnviar.addEventListener("click", (event) => {
                   })
               })
         .then( (response) => { response.json()
-        .then( (data) => localStorage.setItem("autenticacion", data.accessToken))});
+        .then( (data) => {
+          localStorage.setItem("autenticacion", data.accessToken)
+          //localStorage.setItem("nombre", "nombre...")
+        }
+        )});
 
           // let response = await fetch('http://localhost:8080/api/ingreso/', {
           //   method: 'POST',
