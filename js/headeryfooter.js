@@ -64,8 +64,8 @@ function header(nav){
          <div class="row align-items-center">
  
            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-left  text-md-left text-sm-center text-xs-center">
-             <span class="align-text-bottom saludo">¡Hola, visitante!</span>
-           </div>
+           <!--  <span class="align-text-bottom saludo">¡Hola, visitante!</span> -->
+           </div> 
  
            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-lg-right  text-md-right text-sm-center text-xs-center">
              <a href="./ingreso.html" class="links-navegacion px-3">
@@ -111,6 +111,7 @@ function footer(){
       <a class="nav-link links-faq" href="../preguntas-frecuentes.html">Preguntas frecuentes</a>
       <a class="nav-link links-faq" href="../contacto.html">Contacto</a>
       <a class="nav-link links-faq" href="./registro.html">Registro</a>
+      <a class="nav-link links-faq" href="./publicar.html">Administración</a>
 
     </nav>
 
