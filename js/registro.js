@@ -114,13 +114,30 @@ console.log(listaErrores)
       let correoFormulario = document.getElementById("registroCorreoElectronico").value;
       let passwordFormulario = document.getElementById('registroPassword').value;
 
-      let usuarioRegistrado = {"nombre": nombreFormulario,
-                              "apellidom": apellidomFormulario,
-                              "apellidop": apellidopFormulario,
-                              "correo": correoFormulario,
-                              "contrasena": passwordFormulario};
+      // let usuarioRegistrado = {"nombre": nombreFormulario,
+      //                         "apellidom": apellidomFormulario,
+      //                         "apellidop": apellidopFormulario,
+      //                         "correo": correoFormulario,
+      //                         "contrasena": passwordFormulario};
 
-      localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
+      fetch("http://localhost:8080/api/usuario/agregar/", {
+        method: "post",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({
+            "nombre": nombreFormulario,
+            "correo": correoFormulario,
+            "contrasena": passwordFormulario,
+            "apellidop": apellidopFormulario,
+            "apellidom": apellidomFormulario,
+      })
+      })
+      .then( (response) => { response.json()
+      });
+
+      //localStorage.setItem("usuario", JSON.stringify(usuarioRegistrado));
 
       listaAlerta.innerHTML = "";
       cajaAlerta.className = "alert alert-success alert-dismissible fade show"
