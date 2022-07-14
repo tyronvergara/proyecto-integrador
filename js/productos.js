@@ -9,7 +9,9 @@ function agregaProducto(producto){
           <p class="text-muted"> ${producto.sku} </p>
           <div class="mt-auto">
             <p class="card-text mt-auto"> Precio: $ ${producto.precio} </p>
-            <button type="button" class="btn btn-secondary mt-auto">Ver producto</button>
+            <button data-producto="${producto.id}" type="button" class="producto-btn btn btn-secondary mt-auto" data-toggle="modal" data-target="#Modal">
+            Ver producto
+            </button>
           </div>
         </div>
       </div>
